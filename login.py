@@ -7,5 +7,5 @@ class login:
         pass
 
     def cerrarSesion(self):
-        pass("hola")
+        pass
         
