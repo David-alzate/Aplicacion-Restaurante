@@ -23,3 +23,4 @@ class Basedatos:
         except psycopg2.error as e:
             print("Ocurrio un error al conectar", e )
 
+print("prueba")
