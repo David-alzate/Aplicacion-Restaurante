@@ -1,4 +1,5 @@
 import psycopg2
+from usuario import*
 
 class adminGeneral:
     def __init__(self, argumento):
