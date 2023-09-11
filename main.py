@@ -10,4 +10,4 @@ if (usuario.crearUsuario(conexion.conectar(), "luis", "ospina", "lector@gmail.co
 else:
     print("ERROR DE CREACION")
 
-print("prueba")
+print("Hola prueba")
