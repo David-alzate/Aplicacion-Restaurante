@@ -1,7 +1,7 @@
 import psycopg2
 
 class usuario:
-    def __init__(self, nombre,apellido,telefono,direccion,contraseña,id,correo):
+    def __init__(self, nombre,apellido,telefono,direccion,contraseña,id,correo,rol):
         self.nombre = nombre
         self.apellido = apellido
         self.telefono = telefono
@@ -9,8 +9,9 @@ class usuario:
         self.contraseña = contraseña
         self.id = id
         self.correo = correo
+        self.rol = rol
 
-    
+
     def crearUsuario(conexion, nombre, apellido,correo,telefono,direccion,contraseña,id):
         try:
             with conexion.cursor() as cursor:
