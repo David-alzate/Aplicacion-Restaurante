@@ -1,3 +1,4 @@
+# Clase de facturación 
 class facturacion:
     def __init__(self, nombrePedido,nombreMesero,fechaEmision,nombreEstablecimientos,datosServicio,precio):
         self.nombrePedido = nombrePedido

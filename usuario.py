@@ -1,3 +1,4 @@
+# Clase de usuario
 class usuario:
     def __init__(self, nombre,apellido,telefono,direccion,contraseña,id,correo,rol):
         self.nombre = nombre
