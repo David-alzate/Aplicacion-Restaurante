@@ -28,9 +28,6 @@ if __name__ == '__main__':
     sys.exit((app.exec_()))
 
 
-# login.iniciarSesion(conexion.conectar(),"1040031815","1040031815")
-
-
 
 # if (adminGeneral.crearUsuario(conexion.conectar(), "luis", "ospina", "lector@gmail.com", "3127054715", "cll 15", "123", "1040031815", "Cocinero")):
 #     print("USUARIO CREADO EXITOSAMENTE")
