@@ -1,12 +1,13 @@
 import psycopg2
 
+# Clase de la base de datos para realizar su conexión
 class Basedatos:
     def __init__(self,url,user,password,):
         self.url = url
         self.user = user
         self.password = password
         
-
+# Método para conectar a la base de datos
     def conectar(self):
         try:        
              credenciales  ={
