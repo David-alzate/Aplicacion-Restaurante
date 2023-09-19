@@ -4,13 +4,13 @@ from usuario import*
 
 # clase administrador General que hereda los atributos de usuario
 class adminGeneral(usuario):
-    def __init__(self, nombre, apellido, telefono, direccion, contraseña, id, correo,rol):
-        super().__init__(nombre, apellido, telefono, direccion, contraseña, id, correo, rol)
+    def __init__(self, nombre, apellido, telefono, direccion, password, id, correo,rol):
+        super().__init__(nombre, apellido, telefono, direccion, password, id, correo, rol)
 
 # Métodos 
 
     # Método para crear usuario
-    def crearUsuario(conexion, nombre, apellido, correo, telefono, direccion, contraseña, id, rol):
+    def crearUsuario(conexion, nombre, apellido, correo, telefono, direccion, password, id, rol):
         # Convertir el rol a minúsculas para ingresarlo en asi en la base de datos
         rol = rol.lower()
         # Lista de roles permitidos
@@ -23,8 +23,8 @@ class adminGeneral(usuario):
         # Hacemos la consulta en SQL para ingresar el usuario a la base de datos
         try:
             with conexion.cursor() as cursor:
-                consulta = "INSERT INTO usuarios(nombre, apellido, correo, telefono, direccion, contraseña, id, rol) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
-                cursor.execute(consulta, (nombre, apellido, correo, telefono, direccion, contraseña, id, rol))
+                consulta = "INSERT INTO usuarios(nombre, apellido, correo, telefono, direccion, password, id, rol) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
+                cursor.execute(consulta, (nombre, apellido, correo, telefono, direccion, password, id, rol))
             conexion.commit()
             return True
         except psycopg2.Error as e:
@@ -37,7 +37,7 @@ class adminGeneral(usuario):
         try:
             with conexion.cursor() as cursor:
                 # Lista de campos validos para modificar
-                camposValidos = ["nombre", "apellido", "correo", "telefono", "direccion", "contraseña", "rol"]
+                camposValidos = ["nombre", "apellido", "correo", "telefono", "direccion", "password", "rol"]
                 # Evaluamos que el campo ingresado si este en la lista 
                 if campoModificar not in camposValidos:
                     print("Campo no válido.")

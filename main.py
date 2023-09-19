@@ -20,10 +20,10 @@ class GUI(QMainWindow):
     def login(self):
         # Agregamos los datos ingresados en los QlineEdit a id y contraseña
         id = self.a.text()
-        contraseña = self.b.text()
+        password = self.b.text()
         
         # llamamos el método iniciar sesión de login para verificar el inicio de sesión
-        login.iniciarSesion(conexion.conectar(),id , contraseña)   
+        login.iniciarSesion(conexion.conectar(),id , password)   
 
 
 if __name__ == '__main__':
@@ -35,6 +35,6 @@ if __name__ == '__main__':
 
 
 # if (adminGeneral.crearUsuario(conexion.conectar(), "luis", "ospina", "lector@gmail.com", "3127054715", "cll 15", "123", "104003185", "Cocinero")):
-#     print("USUARIO CREADO EXITOSAMENTE")
+#      print("USUARIO CREADO EXITOSAMENTE")
 # else:
-#     print("ERROR DE CREACION")
+#      print("ERROR DE CREACION")
