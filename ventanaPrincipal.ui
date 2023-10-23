@@ -160,8 +160,8 @@ border-radius:10px;
 }
 
 QPushButton:hover{
-background-color: #35795c;
-font: 87 23pt &quot;Arial Black&quot;;
+background-color: #2b5e4b;
+font: 87 20pt &quot;Arial Black&quot;;
 color: rgb(255, 255, 255);
 border-radius:10px;
 }</string>
