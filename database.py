@@ -11,7 +11,7 @@ class Basedatos:
     def conectar(self):
         try:        
              credenciales  ={
-                  "dbname": "prueba",
+                  "dbname": "PRUEBA 2",
                   "user": self.user,
                   "password": self.password,
                   "host": self.url,
