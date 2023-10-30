@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1141</width>
-    <height>830</height>
+    <width>1166</width>
+    <height>837</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1122,6 +1122,25 @@ color: rgb(0, 0, 0);</string>
                      </property>
                     </spacer>
                    </item>
+                   <item>
+                    <widget class="QLabel" name="labelInfoLgMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
                   </layout>
                  </widget>
                 </item>
@@ -1169,7 +1188,7 @@ color: rgb(0, 0, 0);</string>
                  </spacer>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_4">
+                 <widget class="QPushButton" name="btnIngresarMesero">
                   <property name="minimumSize">
                    <size>
                     <width>255</width>
@@ -1450,6 +1469,22 @@ color: rgb(0, 0, 0);</string>
                      </property>
                     </spacer>
                    </item>
+                   <item>
+                    <widget class="QLabel" name="label_47">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>¿</string>
+                     </property>
+                    </widget>
+                   </item>
                   </layout>
                  </widget>
                 </item>
@@ -1617,7 +1652,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_9">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -1679,7 +1714,7 @@ border-radius:10px;</string>
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -2091,7 +2126,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_11">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -2237,7 +2272,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -2281,16 +2316,29 @@ border-radius:10px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableUsuariosAdmin">
-                   <column>
-                    <property name="text">
-                     <string>Nombre</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="tableUsuariosAdmin"/>
                  </item>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_26">
+                   <item>
+                    <widget class="QLabel" name="labelInfoMostrarUsuariosAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <spacer name="horizontalSpacer_14">
                      <property name="orientation">
@@ -2305,7 +2353,7 @@ border-radius:10px;
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="btnActualizarTablaUsuariosAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -2409,7 +2457,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_12">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -2555,7 +2603,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -2665,7 +2713,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit">
+                          <widget class="QLineEdit" name="nombreCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -2717,7 +2765,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_2">
+                          <widget class="QLineEdit" name="apellidoCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -2766,7 +2814,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_3">
+                          <widget class="QLineEdit" name="idCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -2815,7 +2863,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_4">
+                          <widget class="QLineEdit" name="telefonoCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -2864,7 +2912,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_5">
+                          <widget class="QLineEdit" name="correoCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -2913,7 +2961,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_7">
+                          <widget class="QLineEdit" name="direccionCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -2962,7 +3010,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_8">
+                          <widget class="QLineEdit" name="rolCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -3011,7 +3059,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_9">
+                          <widget class="QLineEdit" name="contrasenaCrearUsuarioAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -3057,18 +3105,15 @@ font: 87 11pt &quot;Arial Black&quot;;
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_44">
                    <item>
-                    <widget class="QLabel" name="label_43">
+                    <widget class="QLabel" name="labelInfoCrearUsuarioAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>300</width>
                        <height>30</height>
                       </size>
                      </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>200</width>
-                       <height>30</height>
-                      </size>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
                      </property>
                      <property name="text">
                       <string/>
@@ -3089,7 +3134,30 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_6">
+                    <widget class="QPushButton" name="btnBorrarCrearUsuarioAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Borrar</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnCrearUsuarioAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -3193,7 +3261,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_22">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -3339,7 +3407,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -3403,7 +3471,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_18">
+                    <widget class="QLineEdit" name="labelBuscarUsuarioIdAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>500</width>
@@ -3416,7 +3484,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_8">
+                    <widget class="QPushButton" name="btnBuscarUsuarioAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -3503,7 +3571,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_10">
+                             <widget class="QLineEdit" name="nombreEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3555,7 +3623,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_11">
+                             <widget class="QLineEdit" name="apellidoEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3580,53 +3648,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                            </spacer>
                           </item>
                           <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_50">
-                            <item>
-                             <widget class="QLabel" name="label_47">
-                              <property name="minimumSize">
-                               <size>
-                                <width>100</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>100</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
-                              </property>
-                              <property name="text">
-                               <string>ID</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLineEdit" name="lineEdit_12">
-                              <property name="minimumSize">
-                               <size>
-                                <width>500</width>
-                                <height>25</height>
-                               </size>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </item>
-                          <item>
-                           <spacer name="verticalSpacer_49">
-                            <property name="orientation">
-                             <enum>Qt::Vertical</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>20</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
+                           <layout class="QHBoxLayout" name="horizontalLayout_50"/>
                           </item>
                           <item>
                            <layout class="QHBoxLayout" name="horizontalLayout_51">
@@ -3653,7 +3675,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_13">
+                             <widget class="QLineEdit" name="telefonoEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3702,7 +3724,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_14">
+                             <widget class="QLineEdit" name="correoEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3751,7 +3773,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_15">
+                             <widget class="QLineEdit" name="direccionEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3800,7 +3822,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_16">
+                             <widget class="QLineEdit" name="rolEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3849,7 +3871,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_17">
+                             <widget class="QLineEdit" name="contrasenaEditarUsuarioAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -3895,18 +3917,15 @@ font: 87 11pt &quot;Arial Black&quot;;
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_56">
                       <item>
-                       <widget class="QLabel" name="label_53">
+                       <widget class="QLabel" name="labelInfoEditarUsuarioAdmin">
                         <property name="minimumSize">
                          <size>
                           <width>300</width>
                           <height>30</height>
                          </size>
                         </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>300</width>
-                          <height>30</height>
-                         </size>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
                         </property>
                         <property name="text">
                          <string/>
@@ -3927,10 +3946,10 @@ font: 87 11pt &quot;Arial Black&quot;;
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QPushButton" name="pushButton_7">
+                       <widget class="QPushButton" name="btnGuardarCambiosModificarUsuarioAdmin">
                         <property name="minimumSize">
                          <size>
-                          <width>170</width>
+                          <width>230</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -4034,7 +4053,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_23">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -4180,7 +4199,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -4248,10 +4267,10 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_20"/>
+                    <widget class="QLineEdit" name="idEliminarUsuarioAdmin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_14">
+                    <widget class="QPushButton" name="btnEliminarUsuarioAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -4275,18 +4294,12 @@ border-radius:10px;
                   </layout>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableUsuariosAdmin_2">
-                   <column>
-                    <property name="text">
-                     <string>orueba</string>
-                    </property>
-                   </column>
-                  </widget>
+                  <widget class="QTableWidget" name="tableEliminarUsuarioAdmin"/>
                  </item>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_60">
                    <item>
-                    <widget class="QLabel" name="label_57">
+                    <widget class="QLabel" name="labelInfoEliminarUsuariosAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>300</width>
@@ -4298,6 +4311,9 @@ border-radius:10px;
                        <width>300</width>
                        <height>30</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
                      </property>
                      <property name="text">
                       <string/>
@@ -4316,6 +4332,23 @@ border-radius:10px;
                       </size>
                      </property>
                     </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnActualizarTablaEliminarUsuarioAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </item>
@@ -4399,7 +4432,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_27">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -4545,7 +4578,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -4589,7 +4622,7 @@ border-radius:10px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableUsuariosAdmin_3">
+                  <widget class="QTableWidget" name="tableLocalesAdmin">
                    <column>
                     <property name="text">
                      <string>Local</string>
@@ -4599,6 +4632,22 @@ border-radius:10px;
                  </item>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_28">
+                   <item>
+                    <widget class="QLabel" name="labelInfoMostrarLocalesAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>300</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <spacer name="horizontalSpacer_15">
                      <property name="orientation">
@@ -4613,7 +4662,7 @@ border-radius:10px;
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_2">
+                    <widget class="QPushButton" name="btnActualizarTablaLocalesAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -4717,7 +4766,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_28">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -4863,7 +4912,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -4905,7 +4954,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_38">
                  <property name="spacing">
-                  <number>0</number>
+                  <number>6</number>
                  </property>
                  <property name="leftMargin">
                   <number>50</number>
@@ -4914,10 +4963,10 @@ font: 87 11pt &quot;Arial Black&quot;;
                   <number>60</number>
                  </property>
                  <property name="rightMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_37">
@@ -4963,7 +5012,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_21">
+                          <widget class="QLineEdit" name="nombreCrearLocalAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -5015,7 +5064,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_70">
                    <item>
-                    <widget class="QLabel" name="label_67">
+                    <widget class="QLabel" name="labelInfoCrearLocalAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>300</width>
@@ -5027,6 +5076,9 @@ font: 87 11pt &quot;Arial Black&quot;;
                        <width>200</width>
                        <height>30</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
                      </property>
                      <property name="text">
                       <string/>
@@ -5047,7 +5099,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_15">
+                    <widget class="QPushButton" name="btnCrearLocalAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -5151,7 +5203,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_31">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -5297,7 +5349,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -5353,7 +5405,7 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_22">
+                    <widget class="QLineEdit" name="labelBuscarLocalIdAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>500</width>
@@ -5366,7 +5418,7 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_16">
+                    <widget class="QPushButton" name="btnBuscarLocalAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -5391,26 +5443,43 @@ color: rgb(0, 0, 0);</string>
                   </layout>
                  </item>
                  <item>
-                  <layout class="QVBoxLayout" name="verticalLayout_39">
-                   <property name="leftMargin">
-                    <number>30</number>
+                  <widget class="QLabel" name="label_61">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 18pt &quot;Arial Black&quot;;</string>
                    </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_40">
                    <item>
-                    <layout class="QHBoxLayout" name="horizontalLayout_65">
+                    <layout class="QHBoxLayout" name="horizontalLayout_58">
                      <item>
-                      <layout class="QVBoxLayout" name="verticalLayout_40">
-                       <property name="spacing">
-                        <number>30</number>
-                       </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_39">
                        <item>
-                        <widget class="QLabel" name="label_61">
-                         <property name="styleSheet">
-                          <string notr="true">font: 87 18pt &quot;Arial Black&quot;;</string>
-                         </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                        </widget>
+                        <layout class="QHBoxLayout" name="horizontalLayout_41">
+                         <item>
+                          <widget class="QLabel" name="label_43">
+                           <property name="minimumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>ID</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="ididEditarLocalAdmin"/>
+                         </item>
+                        </layout>
                        </item>
                        <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_66">
@@ -5437,7 +5506,7 @@ color: rgb(0, 0, 0);</string>
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_23">
+                          <widget class="QLineEdit" name="nombreEditarLocalAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -5450,9 +5519,6 @@ color: rgb(0, 0, 0);</string>
                           </widget>
                          </item>
                         </layout>
-                       </item>
-                       <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_67"/>
                        </item>
                       </layout>
                      </item>
@@ -5472,7 +5538,7 @@ color: rgb(0, 0, 0);</string>
                     </layout>
                    </item>
                    <item>
-                    <spacer name="verticalSpacer_55">
+                    <spacer name="verticalSpacer_49">
                      <property name="orientation">
                       <enum>Qt::Vertical</enum>
                      </property>
@@ -5489,7 +5555,7 @@ color: rgb(0, 0, 0);</string>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_68">
                    <item>
-                    <widget class="QLabel" name="label_63">
+                    <widget class="QLabel" name="labelInfoEditarLocalAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>300</width>
@@ -5501,6 +5567,9 @@ color: rgb(0, 0, 0);</string>
                        <width>300</width>
                        <height>30</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
                      </property>
                      <property name="text">
                       <string/>
@@ -5521,10 +5590,10 @@ color: rgb(0, 0, 0);</string>
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_17">
+                    <widget class="QPushButton" name="guardarCambiosEditarLocalAdmin">
                      <property name="minimumSize">
                       <size>
-                       <width>170</width>
+                       <width>230</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -5625,7 +5694,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_35">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -5771,7 +5840,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -5839,10 +5908,10 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_24"/>
+                    <widget class="QLineEdit" name="nombreEliminarLocalAdmin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_18">
+                    <widget class="QPushButton" name="btnEliminarLocalPorNombre">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -5890,10 +5959,10 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_25"/>
+                    <widget class="QLineEdit" name="idEliminarLocalAdmin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_19">
+                    <widget class="QPushButton" name="btnEliminarLocalPorId">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -5917,7 +5986,7 @@ border-radius:10px;
                   </layout>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableWidget">
+                  <widget class="QTableWidget" name="tableEliminarLocalesAdmin">
                    <column>
                     <property name="text">
                      <string>Locales</string>
@@ -5927,6 +5996,22 @@ border-radius:10px;
                  </item>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_36">
+                   <item>
+                    <widget class="QLabel" name="labelInfoEliminarLocalAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>300</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <spacer name="horizontalSpacer_16">
                      <property name="orientation">
@@ -5952,6 +6037,21 @@ border-radius:10px;
          </widget>
          <widget class="QWidget" name="pgMostrarProductoAdmin">
           <layout class="QHBoxLayout" name="horizontalLayout_74">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QFrame" name="frame_35">
              <property name="frameShape">
@@ -6007,7 +6107,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_66">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -6153,7 +6253,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -6197,7 +6297,7 @@ border-radius:10px;
                   </widget>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="tableUsuariosAdmin_4">
+                  <widget class="QTableWidget" name="tableProductosAdmin">
                    <column>
                     <property name="text">
                      <string>Producto</string>
@@ -6255,6 +6355,21 @@ color: rgb(0, 0, 0);</string>
          </widget>
          <widget class="QWidget" name="pgCrearProductoAdmin">
           <layout class="QHBoxLayout" name="horizontalLayout_115">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QFrame" name="frame_40">
              <property name="frameShape">
@@ -6310,7 +6425,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_96">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -6456,7 +6571,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -6556,7 +6671,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_40">
+                          <widget class="QLineEdit" name="nombreCrearProductoAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -6595,7 +6710,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           </widget>
                          </item>
                          <item>
-                          <widget class="QLineEdit" name="lineEdit_41">
+                          <widget class="QLineEdit" name="precioCrearProductoAdmin">
                            <property name="minimumSize">
                             <size>
                              <width>500</width>
@@ -6653,7 +6768,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_114">
                    <item>
-                    <widget class="QLabel" name="label_106">
+                    <widget class="QLabel" name="labelInfoCrearProductoAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>300</width>
@@ -6665,6 +6780,9 @@ font: 87 11pt &quot;Arial Black&quot;;
                        <width>200</width>
                        <height>30</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
                      </property>
                      <property name="text">
                       <string/>
@@ -6685,7 +6803,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_27">
+                    <widget class="QPushButton" name="btnCrearProductoAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -6719,6 +6837,21 @@ color: rgb(0, 0, 0);</string>
          </widget>
          <widget class="QWidget" name="pgEditarProductoAdmin">
           <layout class="QHBoxLayout" name="horizontalLayout_121">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QFrame" name="frame_43">
              <property name="frameShape">
@@ -6774,7 +6907,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_73">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -6920,7 +7053,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -7200,6 +7333,9 @@ font: 87 11pt &quot;Arial Black&quot;;
                           <height>30</height>
                          </size>
                         </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                        </property>
                         <property name="text">
                          <string/>
                         </property>
@@ -7256,6 +7392,21 @@ color: rgb(0, 0, 0);</string>
          </widget>
          <widget class="QWidget" name="pgEliminarProductoAdmin">
           <layout class="QHBoxLayout" name="horizontalLayout_98">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
            <item>
             <widget class="QFrame" name="frame_46">
              <property name="frameShape">
@@ -7311,7 +7462,7 @@ border-radius:10px;</string>
                  <item>
                   <widget class="QLabel" name="label_85">
                    <property name="styleSheet">
-                    <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
                    </property>
                    <property name="text">
                     <string>ADMINISTRADOR</string>
@@ -7457,7 +7608,7 @@ border-radius:10px;
                    <property name="styleSheet">
                     <string notr="true">QPushButton{
 background-color: #d8d8d9;
-font: 87 10pt &quot;Arial Black&quot;;
+font: 87 9pt &quot;Arial Black&quot;;
 color: rgb(0, 0, 0);
 border-radius:10px;
 
@@ -7635,6 +7786,21 @@ border-radius:10px;
             </widget>
            </item>
           </layout>
+         </widget>
+         <widget class="QWidget" name="pgPrincipalMesero">
+          <widget class="QLabel" name="label_40">
+           <property name="geometry">
+            <rect>
+             <x>440</x>
+             <y>40</y>
+             <width>191</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Mesero</string>
+           </property>
+          </widget>
          </widget>
         </widget>
        </item>

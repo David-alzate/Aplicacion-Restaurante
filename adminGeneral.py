@@ -7,62 +7,60 @@ from local import*
 # clase administrador General que hereda los atributos de usuario
 class adminGeneral(usuario,producto,local):
     def __init__(self, nombre, apellido, telefono, direccion, password, id, correo,rol,id_producto,precio,nombreProducto,
-                 id_local,nombre_establecimiento):
+                 idLocal,nombreEstablecimiento):
         usuario().__init__(nombre, apellido, telefono, direccion, password, id, correo, rol)
         producto().__init__(id_producto,precio,nombreProducto)
-        local().__init__(id_local,nombre_establecimiento)
+        local().__init__(idLocal,nombreEstablecimiento)
 
-# Métodos 
+# Métodos adminGeneral.py
 
-    # Método para crear usuario
     def crearUsuario(conexion, nombre, apellido, correo, telefono, direccion, password, id, rol):
-        # Convertir el rol a minúsculas para ingresarlo en asi en la base de datos
+        # Convertir el rol a minúsculas para ingresarlo así en la base de datos
         rol = rol.lower()
         # Lista de roles permitidos
         roles_permitidos = ["administrador", "mesero", "cocinero"]
-        
-        # Evaluamos si el rol ingresado esta dentro de la lista de roles permitidos 
+    
+        # Evaluamos si el rol ingresado está dentro de la lista de roles permitidos 
         if rol not in roles_permitidos:
-            print("Rol no válido. Los roles permitidos son:", roles_permitidos)
-            return False
+            mensaje = "Rol no válido"
+            print(mensaje)
+            return False, mensaje
         # Hacemos la consulta en SQL para ingresar el usuario a la base de datos
         try:
             with conexion.cursor() as cursor:
                 consulta = "INSERT INTO usuarios(nombre, apellido, correo, telefono, direccion, password, id, rol) VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
                 cursor.execute(consulta, (nombre, apellido, correo, telefono, direccion, password, id, rol))
             conexion.commit()
-            return True
+            return True, "Usuario creado exitosamente"
         except psycopg2.Error as e:
-            print("Ocurrió un error al crear el usuario:", e)
+            mensaje = "Ocurrió un error al crear el usuario: " + str(e)
+            print(mensaje)
             return False
+
     
-    # Metodo Para Modificar Un usuario ya creado
-    def modificarUsuario(conexion, id, campoModificar, nuevoValor):
-        # Hacemos la consulta SQL para modificar el campo deseado
+    # Modificar usuario
+    def modificarUsuario(conexion, id, nombre, apellido, correo, telefono, direccion, password, rol):
+        # Convertir el rol a minúsculas para ingresarlo así en la base de datos
+        rol = rol.lower()
+        # Lista de roles permitidos
+        roles_permitidos = ["administrador", "mesero", "cocinero"]
+    
+        # Evaluamos si el rol ingresado está dentro de la lista de roles permitidos 
+        if rol not in roles_permitidos:
+            mensaje = "Rol no válido"
+            print(mensaje)
+            return False, mensaje
+        # Hacemos la consulta en SQL para ingresar el usuario a la base de datos
         try:
             with conexion.cursor() as cursor:
-                # Lista de campos validos para modificar
-                camposValidos = ["nombre", "apellido", "correo", "telefono", "direccion", "password", "rol"]
-                # Evaluamos que el campo ingresado si este en la lista 
-                if campoModificar not in camposValidos:
-                    print("Campo no válido.")
-                    return False
-
-                # Validar el rol si el campoModificar es 'rol'
-                if campoModificar == "rol":
-                    nuevoValor = nuevoValor.lower()  # Convertir el valor a minúsculas
-                    roles_permitidos = ["administrador", "mesero", "cocinero"]
-                    if nuevoValor not in roles_permitidos:
-                        print("Rol no válido. Los roles permitidos son:", roles_permitidos)
-                        return False
-                 # Hacemos la consulta SQL para modificar el campo
-                consulta = f"UPDATE usuarios SET {campoModificar} = %s WHERE id = %s"
-                cursor.execute(consulta, (nuevoValor, id))
-                conexion.commit()
-                print(f"El campo '{campoModificar}' se actualizó con éxito.")
-                return True
+                consulta = "UPDATE usuarios SET nombre = %s, apellido = %s, correo = %s, telefono = %s, direccion = %s, password = %s, rol = %s WHERE id = %s;"
+                cursor.execute(consulta, (nombre, apellido, correo, telefono, direccion, password, rol, id))
+            conexion.commit()
+            return True, "Usuario actualizado exitosamente"
         except psycopg2.Error as e:
-            print("Ocurrió un error al editar: ", e)
+            mensaje = "Ocurrió un error al actualizar el usuario: " + str(e)
+            print(mensaje)
+            return False
 
 # Método para Consultar un usuario por su id
     def consultarUsuario(conexion, id):
@@ -72,10 +70,10 @@ class adminGeneral(usuario,producto,local):
                 cursor.execute("SELECT * FROM usuarios WHERE id="+str(id))
                 usuario = cursor.fetchone()
                 if usuario:
-                    print(usuario)
+                    return usuario
                 else:
                     print("El usuario no existe")
-                return True
+                return False
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
 
@@ -86,9 +84,7 @@ class adminGeneral(usuario,producto,local):
             with conexion.cursor() as cursor:
                 cursor.execute("SELECT * FROM usuarios;")
                 usuarios = cursor.fetchall()
-                for usuario in usuarios:
-                    print(usuario)
-            return True
+                return usuarios  # Devuelve la lista de usuarios
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
 
@@ -99,9 +95,9 @@ class adminGeneral(usuario,producto,local):
             with conexion.cursor() as cursor:
                 consulta = "DELETE FROM usuarios WHERE id =" + str(id)
                 cursor.execute(consulta)
-                print("Usuario eliminado con exito")
-            conexion.commit()
-            return True
+                mensaje = "Usuario eliminado con exito"
+                conexion.commit()
+                return True, mensaje
         except psycopg2.Error as e:
             print("Error eliminando: ", e)
 
@@ -124,8 +120,8 @@ class adminGeneral(usuario,producto,local):
             with conexion.cursor() as cursor:
                 consulta = "INSERT INTO producto(precio,nombreProducto) VALUES (%s, %s);"
                 cursor.execute(consulta,(precio,nombreProducto))
-            conexion.commit()
-            return True
+                conexion.commit()
+                return True, "Producto creado exitosamente"
         except psycopg2.Error as e:
             print("Ocurrió un error al crear producto:", e)
             return False
@@ -173,8 +169,7 @@ class adminGeneral(usuario,producto,local):
             with conexion.cursor() as cursor:
                 cursor.execute("SELECT * FROM producto;")
                 producto = cursor.fetchall()
-                for producto in producto:
-                    print(producto)
+                return producto  # Devuelve la lista de usuarios
             return True
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
@@ -237,9 +232,8 @@ class adminGeneral(usuario,producto,local):
             with conexion.cursor() as cursor:
                 consulta = "INSERT INTO local(nombre_establecimiento) VALUES (%s);"
                 cursor.execute(consulta, (nombre_establecimiento,))
-
             conexion.commit()
-            return True
+            return True, "Local creado exitosamente"
         except psycopg2.Error as e:
             print("Ocurrió un error al crear producto:", e)
             return False
@@ -260,24 +254,19 @@ class adminGeneral(usuario,producto,local):
             print("Ocurrió un error al consultar: ", e)
 
     # Metodo Para Modificar Un Local ya creado
-    def modificarLocal(conexion, id_local, campoModificar, nuevoValor):
+    def modificarLocal(conexion, idLocal, nombreEstablecimiento):
         # Hacemos la consulta SQL para modificar el campo deseado
         try:
             with conexion.cursor() as cursor:
-                # Lista de campos validos para modificar
-                camposValidos = ["nombre_establecimiento"]
-                # Evaluamos que el campo ingresado si este en la lista 
-                if campoModificar not in camposValidos:
-                    print("Campo no válido.")
-                    return False
-                 # Hacemos la consulta SQL para modificar el campo
-                consulta = f"UPDATE local SET {campoModificar} = %s WHERE id_local = %s"
-                cursor.execute(consulta, (nuevoValor, id_local))
+                # Hacemos la consulta SQL para modificar el campo
+                consulta = "UPDATE local SET nombre_establecimiento = %s WHERE id_local = %s"
+                cursor.execute(consulta, (nombreEstablecimiento, idLocal))
                 conexion.commit()
-                print(f"El campo '{campoModificar}' se actualizó con éxito.")
-                return True
+                mensaje = ("se actualizó con éxito.")
+                return True, mensaje
         except psycopg2.Error as e:
             print("Ocurrió un error al editar: ", e)
+
     
 # Método para consultar local por nombre
     def consultarLocalPorNombre(conexion, nombre_establecimiento):
@@ -287,10 +276,10 @@ class adminGeneral(usuario,producto,local):
                 cursor.execute("SELECT * FROM local WHERE nombre_establecimiento = %s", (nombre_establecimiento,))
                 local = cursor.fetchall()
                 if local:
-                    print(local)
+                    return local
                 else:
                     print("El local no existe")
-            return True
+                return False
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
 
@@ -300,25 +289,24 @@ class adminGeneral(usuario,producto,local):
         try:
             with conexion.cursor() as cursor:
                 cursor.execute("SELECT * FROM local;")
-                local = cursor.fetchall()
-                for local in local:
-                    print(local)
-            return True
+                locales = cursor.fetchall()
+                return locales
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
 
-# Método Eliminar local por su id 
+# Método Eliminar local por su id retornar true si se elimino y 
     def eliminarLocal(conexion, id_local):
-        # Hacemos la consulta SQL para eliminar el local 
+        # Hacemos la consulta SQL para eliminar el usuario 
         try:
             with conexion.cursor() as cursor:
                 consulta = "DELETE FROM local WHERE id_local =" + str(id_local)
                 cursor.execute(consulta)
-                print("local eliminado con exito")
+                mensaje = "Local eliminado con exito"
             conexion.commit()
-            return True
+            return True, mensaje
         except psycopg2.Error as e:
             print("Error eliminando: ", e)
+    
     
 
 
@@ -328,9 +316,9 @@ class adminGeneral(usuario,producto,local):
                 # Usamos comillas simples alrededor del valor para asegurarnos de que sea tratado como una cadena
                 consulta = "DELETE FROM local WHERE nombre_establecimiento = %s"
                 cursor.execute(consulta, (nombre_establecimiento,))
-                print("Local eliminado con éxito")
+                mensaje = "Local eliminado con éxito"
             conexion.commit()
-            return True
+            return True, mensaje
         except psycopg2.Error as e:
             print("Error eliminando: ", e)
 
@@ -347,3 +335,36 @@ class adminGeneral(usuario,producto,local):
             return True
         except psycopg2.Error as e:
             print("Ocurrió un error al eliminar locales: ", e) 
+
+    # Metodo para consultar el rol de un usuario
+    def consultarRol(conexion, id):
+        # Hacemos la consulta SQL para extraer la información de la base de datos del id ingresado
+        try:
+            with conexion.cursor() as cursor:
+                cursor.execute("SELECT rol FROM usuarios WHERE id="+str(id))
+                rol = cursor.fetchone()
+                if rol:
+                    return rol
+                else:
+                    men = "El usuario no existe"
+                return False, men
+        except psycopg2.Error as e:
+            print("Ocurrió un error al consultar: ", e)
+        
+    # Metodo para comprobar si el usuario existe
+    def comprobarUsuario(conexion, id):
+        # Hacemos la consulta SQL para extraer la información de la base de datos del id ingresado
+        try:
+            with conexion.cursor() as cursor:
+                cursor.execute("SELECT * FROM usuarios WHERE id="+str(id))
+                usuario = cursor.fetchone()
+                # Verificar que el usuario exista
+                if usuario:
+                    return True
+                else:
+                    return False
+        except psycopg2.Error as e:
+            print("Ocurrió un error al consultar: ", e)
+            return False
+
+

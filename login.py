@@ -17,15 +17,14 @@ class login(usuario):
                 # Verificar que el usuario exista
                 if usuario:
                     # Comprobar si la contraseña coincide
-                    if password == usuario[5]:   # 5 es el índice de la columna 'contraseña' en la base de datos 
-                        print("Inicio de sesión exitoso.")
-                        return True
+                    if password == usuario[6]:   # 5 es el índice de la columna 'contraseña' en la base de datos 
+                        return True , "Inicio de sesión exitoso."
                     else:
-                        print("Contraseña incorrecta.")
-                        return False
+                        mensaje = "Contraseña incorrecta."
+                        return False, mensaje
                 else:
-                    print("El usuario no existe.")
-                    return False
+                    mensaje = "El usuario no existe."
+                    return False, mensaje
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
             return False
