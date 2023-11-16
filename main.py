@@ -16,12 +16,12 @@ import os
 # Realizamos la conexión a la base de datos
 conexion = Basedatos("localhost","postgres","000")
 
-
+script_dir = os.path.dirname(os.path.realpath(__file__))
 # clase de la GUI para realizar el login 
 class GUI(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ventanaPrincipal.ui",self)
+        uic.loadUi(os.path.join(script_dir, 'ventanaPrincipal.ui'), self)
         self.btnRegresar.hide()
  
         # coneccion botones
