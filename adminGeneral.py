@@ -2,7 +2,7 @@ import psycopg2
 from usuario import*
 from productos import*
 from local import*
-
+from database import*
 
 # clase administrador General que hereda los atributos de usuario
 class adminGeneral(usuario,producto,local):
@@ -114,63 +114,43 @@ class adminGeneral(usuario,producto,local):
             print("Ocurrió un error al eliminar usuarios: ", e)
     
 
-# metodo para crear un producto 
-    def crearProducto(conexion,precio,nombreProducto):
+# Metodo para crear un producto
+    def crearProducto(conexion,nombreProducto,precio,nombreEstablecimiento):
         try:
             with conexion.cursor() as cursor:
-                consulta = "INSERT INTO producto(precio,nombreProducto) VALUES (%s, %s);"
-                cursor.execute(consulta,(precio,nombreProducto))
-                conexion.commit()
-                return True, "Producto creado exitosamente"
+                consulta = "INSERT INTO producto(nombreProducto,precio,nombreEstablecimiento) VALUES (%s,%s,%s);"
+                cursor.execute(consulta, (nombreProducto,precio,nombreEstablecimiento))
+            conexion.commit()
+            return True, "Producto creado exitosamente"
         except psycopg2.Error as e:
             print("Ocurrió un error al crear producto:", e)
             return False
-
-
-# metodo para consultar producto
-    def consultarProducto(conexion, id_producto):
-        # Hacemos la consulta SQL para extraer la información de la base de datos del id ingresado
-        try:
-            with conexion.cursor() as cursor:
-                cursor.execute("SELECT * FROM producto WHERE id_producto="+str(id_producto))
-                producto = cursor.fetchone()
-                if producto:
-                    print(producto)
-                else:
-                    print("El producto no existe")
-                return True
-        except psycopg2.Error as e:
-            print("Ocurrió un error al consultar: ", e)
+           
 
     # Metodo Para Modificar Un producto ya creado
-    def modificarProducto(conexion, id_producto, campoModificar, nuevoValor):
+    def modificarProducto(conexion, precio, nombreEstablecimiento, nombreProducto):
         # Hacemos la consulta SQL para modificar el campo deseado
         try:
             with conexion.cursor() as cursor:
-                # Lista de campos validos para modificar
-                camposValidos = ["precio","nombreProducto"]
-                # Evaluamos que el campo ingresado si este en la lista 
-                if campoModificar not in camposValidos:
-                    print("Campo no válido.")
-                    return False
-                 # Hacemos la consulta SQL para modificar el campo
-                consulta = f"UPDATE producto SET {campoModificar} = %s WHERE id_producto = %s"
-                cursor.execute(consulta, (nuevoValor, id_producto))
+                # Hacemos la consulta SQL para modificar el campo
+                consulta = "UPDATE producto SET precio = %s, nombreEstablecimiento = %s WHERE nombreProducto = %s"
+                cursor.execute(consulta, (precio, nombreEstablecimiento, nombreProducto))
                 conexion.commit()
-                print(f"El campo '{campoModificar}' se actualizó con éxito.")
-                return True
+                mensaje = ("se actualizó con éxito.")
+                return True, mensaje
         except psycopg2.Error as e:
             print("Ocurrió un error al editar: ", e)
-
+        
+       
 # Método para consultar Todos los productos de la base de datos
     def consultarProductos(conexion):
-        # Hacemos la consulta SQL para extraer la información de la base de datos de todos los usuarios de la tabla usuarios 
+        # Hacemos la consulta SQL para extraer la información de la base de datos de todos los productos de la tabla prioducto
         try:
             with conexion.cursor() as cursor:
                 cursor.execute("SELECT * FROM producto;")
-                producto = cursor.fetchall()
-                return producto  # Devuelve la lista de usuarios
-            return True
+                productos = cursor.fetchall()
+                return productos  # Devuelve la lista de pruductos
+
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
     
@@ -181,36 +161,23 @@ class adminGeneral(usuario,producto,local):
                 # Utiliza un marcador de posición en la consulta SQL y pasa el valor como parámetro en el método execute
                 cursor.execute("SELECT * FROM producto WHERE nombreProducto = %s", (nombreProducto,))
                 producto = cursor.fetchall()
-                if producto:
-                    print(producto)
+                if producto:    
+                    return producto
                 else:
                     print("El producto no existe")
-            return True
+                return False
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
 
-# Método Eliminar producto por su id 
-    def eliminarProducto(conexion, id_producto):
-        # Hacemos la consulta SQL para eliminar el usuario 
-        try:
-            with conexion.cursor() as cursor:
-                consulta = "DELETE FROM producto WHERE id_producto =" + str(id_producto)
-                cursor.execute(consulta)
-                print("producto eliminado con exito")
-            conexion.commit()
-            return True
-        except psycopg2.Error as e:
-            print("Error eliminando: ", e)
-    
     def eliminarProductoPorNombre(conexion, nombreproducto):
         try:
             with conexion.cursor() as cursor:
                 # Usamos comillas simples alrededor del valor para asegurarnos de que sea tratado como una cadena
                 consulta = "DELETE FROM producto WHERE nombreproducto = %s"
                 cursor.execute(consulta, (nombreproducto,))
-                print("producto eliminado con éxito")
-            conexion.commit()
-            return True
+                mensaje = "producto eliminado con éxito"
+                conexion.commit()
+                return True, mensaje 
         except psycopg2.Error as e:
             print("Error eliminando: ", e)
 
@@ -366,5 +333,18 @@ class adminGeneral(usuario,producto,local):
         except psycopg2.Error as e:
             print("Ocurrió un error al consultar: ", e)
             return False
-
+        
+    def consultarProductoPorNombreEstablecimiento(conexion, nombreEstablecimiento):
+        try:
+            with conexion.cursor() as cursor:
+                # Utiliza un marcador de posición en la consulta SQL y pasa el valor como parámetro en el método execute
+                cursor.execute("SELECT * FROM producto WHERE nombreEstablecimiento = %s", (nombreEstablecimiento,))
+                producto = cursor.fetchall()
+                if producto:
+                    return producto
+                else:
+                    print("El producto no existe")
+                return False
+        except psycopg2.Error as e:
+            print("Ocurrió un error al consultar: "), e
 

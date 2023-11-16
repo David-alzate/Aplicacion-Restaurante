@@ -1,5 +1,8 @@
 from database import *
 from adminGeneral import*
+from mesero import*
+from cocinero import*
+from reporteVentas import*
 from usuario import*
 from login import *
 import sys
@@ -13,13 +16,14 @@ import os
 # Realizamos la conexión a la base de datos
 conexion = Basedatos("localhost","postgres","000")
 
+
 # clase de la GUI para realizar el login 
 class GUI(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("ventanaPrincipal.ui",self)
         self.btnRegresar.hide()
-
+ 
         # coneccion botones
         # QLine Passwords
         self.contrasenaAdmin.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -98,6 +102,7 @@ class GUI(QMainWindow):
         self.btnEliminarLocalPorId.clicked.connect(self.borrarLocalPorId)
         self.btnEliminarLocalPorNombre.clicked.connect(self.borrarLocalPorNombre)
         self.btnActualizarTablaLocalesAdmin.clicked.connect(lambda: self.cargarDatosTablaLocales())
+        
 
         # CRUD Productos
         self.btnProductosAdmin.clicked.connect(lambda: self.pgMostrarPdAdmin())
@@ -107,40 +112,107 @@ class GUI(QMainWindow):
         self.btnEliminarProductoAdmin1.clicked.connect(lambda: self.pgEliminarPdAdmin())
         self.btnCerrarSesionAdmin1_9.clicked.connect(lambda: self.pgLgAdmin())
 
-        self.btnProductosAdmin.clicked.connect(lambda: self.pgMostrarPdAdmin())
         self.btnMostrarProductoAdmin1_2.clicked.connect(lambda: self.pgMostrarPdAdmin())
         self.btnCrearProductoAdmin1_2.clicked.connect(lambda: self.pgCrearPdAdmin())
         self.btnEditarProductoAdmin1_2.clicked.connect(lambda: self.pgEditarPdAdmin())
         self.btnEliminarProductoAdmin1_2.clicked.connect(lambda: self.pgEliminarPdAdmin())
         self.btnCerrarSesionAdmin1_10.clicked.connect(lambda: self.pgLgAdmin())
 
-        self.btnProductosAdmin.clicked.connect(lambda: self.pgMostrarPdAdmin())
         self.btnMostrarProductoAdmin1_3.clicked.connect(lambda: self.pgMostrarPdAdmin())
         self.btnCrearProductoAdmin1_3.clicked.connect(lambda: self.pgCrearPdAdmin())
         self.btnEditarProductoAdmin1_3.clicked.connect(lambda: self.pgEditarPdAdmin())
         self.btnEliminarProductoAdmin1_3.clicked.connect(lambda: self.pgEliminarPdAdmin())
         self.btnCerrarSesionAdmin1_11.clicked.connect(lambda: self.pgLgAdmin())
 
-        self.btnProductosAdmin.clicked.connect(lambda: self.pgMostrarPdAdmin())
         self.btnMostrarProductoAdmin1_4.clicked.connect(lambda: self.pgMostrarPdAdmin())
         self.btnCrearProductoAdmin1_4.clicked.connect(lambda: self.pgCrearPdAdmin())
         self.btnEditarProductoAdmin1_4.clicked.connect(lambda: self.pgEditarPdAdmin())
         self.btnEliminarProductoAdmin1_4.clicked.connect(lambda: self.pgEliminarPdAdmin())
         self.btnCerrarSesionAdmin1_12.clicked.connect(lambda: self.pgLgAdmin())
-
+        
         self.btnMostrarProductoAdmin1.clicked.connect(lambda: self.cargarDatosTablaProductos())
         self.btnCrearProductoAdmin.clicked.connect(self.agregarProducto)
+        self.btnBuscarProductoAdmin.clicked.connect(self.buscarProductoPorNombre)
+        self.btnGuardarCambiosEditarProductoAdmin.clicked.connect(self.editarProducto)
+        self.btnEliminarProductoAdmin1_4.clicked.connect(lambda: self.cargarDatosTablaEliminarProductos())
+        self.btnEliminarProductoPorNombre.clicked.connect(self.eliminarProductoPorNombre)
+
+        self.btnEliminarPedidoMesero.clicked.connect(self.eliminarPdMesero)
+        self.btnEliminarPedidoMesero.clicked.connect(lambda: self.cargarDatosTablaEliminarProductos())
+        self.btnReporteVentasAdmin.clicked.connect(self.pgReporteVentasAdmin)
+        self.btnActualizarTableProductosAdmin.clicked.connect(lambda: self.cargarDatosTablaProductos())
         
 
         # login Mesero
         self.btnMesero.clicked.connect(lambda: self.pgLgMesero())
         self.btnIngresarMesero.clicked.connect(self.loginMesero)
 
+        # Crud Pedidos
 
+        self.btnPedidosPendientesMesero1.clicked.connect(lambda: self.pgMostrarPdMesero())
+        self.btnCrearPedidosMesero1.clicked.connect(lambda: self.pgCrearPdMesero())
+        self.btnEditarPedidosMesero1.clicked.connect(lambda: self.pgEditarPdMesero())
+        self.btnEliminarPedidosMesero1.clicked.connect(lambda: self.pgEliminarPdMesero())
+        self.btnPedidosListosMesero1.clicked.connect(lambda: self.pgMostrarPdListosMesero())
+        self.btnCerrarSesionAdmin1_13.clicked.connect(lambda: self.pgLgMesero())
+
+        self.btnPedidosPendientesMesero1_2.clicked.connect(lambda: self.pgMostrarPdMesero())
+        self.btnCrearPedidosMesero1_2.clicked.connect(lambda: self.pgCrearPdMesero())
+        self.btnEditarPedidosMesero1_2.clicked.connect(lambda: self.pgEditarPdMesero())
+        self.btnEliminarPedidosMesero1_2.clicked.connect(lambda: self.pgEliminarPdMesero())
+        self.btnPedidosListosMesero1_2.clicked.connect(lambda: self.pgMostrarPdListosMesero())
+        self.btnCerrarSesionAdmin1_14.clicked.connect(lambda: self.pgLgMesero())
+
+        self.btnPedidosPendientesMesero1_3.clicked.connect(lambda: self.pgMostrarPdMesero())
+        self.btnCrearPedidosMesero1_3.clicked.connect(lambda: self.pgCrearPdMesero())
+        self.btnEditarPedidosMesero1_3.clicked.connect(lambda: self.pgEditarPdMesero())
+        self.btnEliminarPedidosMesero1_3.clicked.connect(lambda: self.pgEliminarPdMesero())
+        self.btnPedidosListosMesero1_3.clicked.connect(lambda: self.pgMostrarPdListosMesero())
+        self.btnCerrarSesionAdmin1_15.clicked.connect(lambda: self.pgLgMesero())
+
+        self.btnPedidosPendientesMesero1_4.clicked.connect(lambda: self.pgMostrarPdMesero())
+        self.btnCrearPedidosMesero1_4.clicked.connect(lambda: self.pgCrearPdMesero())
+        self.btnEditarPedidosMesero1_4.clicked.connect(lambda: self.pgEditarPdMesero())
+        self.btnEliminarPedidosMesero1_4.clicked.connect(lambda: self.pgEliminarPdMesero())
+        self.btnPedidosListosMesero1_4.clicked.connect(lambda: self.pgMostrarPdListosMesero())
+        self.btnCerrarSesionAdmin1_16.clicked.connect(lambda: self.pgLgMesero())
+
+        self.btnPedidosPendientesMesero1_5.clicked.connect(lambda: self.pgMostrarPdMesero())
+        self.btnCrearPedidosMesero1_5.clicked.connect(lambda: self.pgCrearPdMesero())
+        self.btnEditarPedidosMesero1_5.clicked.connect(lambda: self.pgEditarPdMesero())
+        self.btnEliminarPedidosMesero1_5.clicked.connect(lambda: self.pgEliminarPdMesero())
+        self.btnPedidosListosMesero1_5.clicked.connect(lambda: self.pgMostrarPdListosMesero())
+        self.btnCerrarSesionAdmin1_17.clicked.connect(lambda: self.pgLgMesero())
+
+        self.btnGenerarPedidoMesero.clicked.connect(self.agregarPedido)
+        self.comboBoxNombreEstablecimientoCrearPedidoMesero.currentTextChanged.connect(self.cargardatoscomboBoxProductosCrearPedidoMesero)
+        self.btnAgregarProductosAPedidoMesero.clicked.connect(self.agregarProductoAPedido)
+        self.btnBuscarPedidoMesero.clicked.connect(self.buscarPedido)
+        self.btnGuardarCambiosEditarPedidoMesero.clicked.connect(self.editarPedido)
+        self.btnBuscarPedidoMesero.clicked.connect(self.cargardatostableProductos_pedidoEditarMesero)
+
+        self.comboBoxNombreEstablecimientoEditarPedidoMesero.currentTextChanged.connect(self.cargardatoscomboBoxProductosEditarPedidoMesero)
+        self.btnGuardarCambiosEditarPedidoMesero_2.clicked.connect(self.editarProductoPedido)
+        self.btnGuardarCambiosEditarPedidoMesero_2.clicked.connect(self.cargardatostableProductos_pedidoEditarMesero)
+        self.btnFacturarPedidoMesero.clicked.connect(self.facturarPedido)
+
+        #Cocinero
         self.btnCocinero.clicked.connect(lambda: self.pgLgCocinero())
+        self.btnIngresarCocinero.clicked.connect(self.loginCocinero)
         self.btnRegresar.clicked.connect(lambda: self.pgAnterior())
+        self.btnPedidosPendientesCocinero.clicked.connect(lambda: self.cargarDatostablaProductos_pedidoCocinero())
+
+        self.btnAceptarPedidoCocinero.clicked.connect(self.aceptarPedidoCocinero)
+        self.btnRechazarPedidoCocinero.clicked.connect(self.rechazarPedidoCocinero)
         
         self.btnCerrarSesionAdmin.clicked.connect(lambda: self.pgLgAdmin())
+        self.btnActualizarTablaPedidosPendientes.clicked.connect(lambda: self.cargarDatosTablaPedidos())
+        self.btnActualizarPedidosListos.clicked.connect(lambda: self.cargardatosTablaPedidosListos())
+        self.btnActualizarReporteVentasAdmin.clicked.connect(lambda: self.cargarDatosTablaReporteVentasAdmin())
+        self.btnActualizarPedidosPendientesCocinero.clicked.connect(lambda: self.cargarDatostablaProductos_pedidoCocinero())
+        self.btnCerrarSesionAdmin1_18.clicked.connect(lambda: self.pgLgCocinero())
+
+        len(self.contrasenaCrearUsuarioAdmin.text() ) < 10
 
         #Control de barra de titulos
         self.btnNormalizar.hide()
@@ -171,6 +243,24 @@ class GUI(QMainWindow):
 
         self.tableProductosAdmin.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         self.tableProductosAdmin.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+
+        self.tableEliminarProductosAdmin.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        self.tableEliminarProductosAdmin.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
+        
+        self.tablePedidosMesero.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        
+        self.tableProductosPedidoEditarMesero.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+        self.tableEliminarPedidoMesero.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+        self.tableProductosPedidoCocinero.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+        self.tablePedidosListosMesero.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+        self.tableReporteVentasAdmin.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+
+        
+        
 
       
     # Metodo para regresar
@@ -218,9 +308,23 @@ class GUI(QMainWindow):
                self.pgAdmin()
          if self.stackedWidget.currentWidget() == self.pgEliminarProductoAdmin:
                self.pgAdmin()
+         if self.stackedWidget.currentWidget() == self.pgMostrarPedidosMesero:
+               self.pgLgMesero()
+         if self.stackedWidget.currentWidget() == self.pgCrearPedidosMesero:
+               self.pgLgMesero()
+         if self.stackedWidget.currentWidget() == self.pgEditarPedidosMesero:
+                self.pgLgMesero()
+         if self.stackedWidget.currentWidget() == self.pgEliminarPedidosMesero:
+                self.pgLgMesero()
+         if self.stackedWidget.currentWidget() == self.pgMostrarPedidosListosMesero:
+                  self.pgLgMesero()
+         if self.stackedWidget.currentWidget() == self.pageCocinero:
+                self.pgLgCocinero()
+         if self.stackedWidget.currentWidget() == self.pageReporteVentasAdmin:
+                self.pgAdmin()
     
     # Metodos para cambiar de ventana  
-    # Administrador
+    # Administrador     
     def pgLgAdmin(self):
          self.stackedWidget.setCurrentWidget(self.pgLoginAdmin)
          self.usuarioAdmin.setText("")
@@ -301,10 +405,15 @@ class GUI(QMainWindow):
          id = self.idCrearUsuarioAdmin.text()
          rol = self.rolCrearUsuarioAdmin.text()
 
+  
          # crear usuario 
          conexion_db = conexion.conectar()
          try:
-            resultado, mensaje = adminGeneral.crearUsuario(conexion_db, nombre, apellido, correo, telefono, direccion,password, id,  rol)
+            if len(password) > 10:
+                   resultado = False
+                   mensaje = "La contraseña no puede tener mas de 10 caracteres"
+            else:
+                  resultado, mensaje = adminGeneral.crearUsuario(conexion_db, nombre, apellido, correo, telefono, direccion,password, id,  rol)
          except:
             resultado = False
             mensaje = "Ocurrió un error al crear el usuario"
@@ -653,11 +762,13 @@ class GUI(QMainWindow):
     # cambiar a la ventana de crud productos    
     def pgMostrarPdAdmin(self):
          self.stackedWidget.setCurrentWidget(self.pgMostrarProductoAdmin)
+         self.cargarDatosTablaProductos()
+         self.labelInfoMostrarProductosAdmin.setText("")
 
     def cargarDatosTablaProductos(self):
             # Obtener los datos de la base de datos
             conexion_db = conexion.conectar()
-            locales = adminGeneral.consultarProductos(conexion_db)
+            productos = adminGeneral.consultarProductos(conexion_db)
             conexion_db.close()
       
             # Ocultar la cabecera vertical que muestra los números de fila
@@ -665,36 +776,40 @@ class GUI(QMainWindow):
       
             # Establecer los títulos de las columnas
             self.tableProductosAdmin.setColumnCount(3)
-            self.tableProductosAdmin.setHorizontalHeaderLabels(["ID", "Precio", "Nombre Producto"])
+            self.tableProductosAdmin.setHorizontalHeaderLabels(["Nombre", "Precio", "Nombre Establecimiento"])
                   
             # Limpiar la tabla antes de agregar nuevos datos
             self.tableProductosAdmin.setRowCount(0)
             
-            if locales:
+            if productos:
                   # Recorrer los datos de los locales y agregarlos a la tabla
-                  for local in locales:
+                  for producto in productos:
                         rowPosition = self.tableProductosAdmin.rowCount()
                         self.tableProductosAdmin.insertRow(rowPosition)
                    
                         # Insertar los datos en las celdas
-                        self.tableProductosAdmin.setItem(rowPosition, 0, QTableWidgetItem(str(local[0])))
-                        self.tableProductosAdmin.setItem(rowPosition, 1, QTableWidgetItem(str(local[1])))
-                        self.tableProductosAdmin.setItem(rowPosition, 2, QTableWidgetItem(local[2]))
+                        self.tableProductosAdmin.setItem(rowPosition, 0, QTableWidgetItem(producto[0]))
+                        self.tableProductosAdmin.setItem(rowPosition, 1, QTableWidgetItem(str(producto[1])))
+                        self.tableProductosAdmin.setItem(rowPosition, 2, QTableWidgetItem(producto[2]))
+
             else:
-                  self.labelInfoMostrarLocalesAdmin.setText("No hay locales disponibles en la base de datos")
+                  self.labelInfoMostrarProductosAdmin.setText("No hay productos disponibles en la base de datos")
     
     def pgCrearPdAdmin(self):
           self.stackedWidget.setCurrentWidget(self.pgCrearProductoAdmin)
+          self.cargarDatosComboBoxCrearPdAdmin()
+          self.labelInfoCrearProductoAdmin.setText("")
 
     def agregarProducto(self):
             # obtener los datos de los lineEdit
             nombre = self.nombreCrearProductoAdmin.text()
             precio = self.precioCrearProductoAdmin.text()
+            nombreEstablecimiento = self.nombreEstablecimientoCrearProductoAdmin.currentText()
             
             # crear producto
-            conexion_db = conexion.conectar()
+            conexion_db = conexion.conectar()   
             try:
-                  resultado, mensaje = adminGeneral.crearProducto(conexion_db, precio, nombre)
+                  resultado, mensaje = adminGeneral.crearProducto(conexion_db,nombre, precio, nombreEstablecimiento)
             except:
                   resultado = False
                   mensaje = "Ocurrió un error al crear el producto"
@@ -711,30 +826,692 @@ class GUI(QMainWindow):
                         self.labelInfoCrearProductoAdmin.setText(mensaje)
             except:
                         self.labelInfoCrearProductoAdmin.setText("Ocurrió un error al crear el producto")
+    
+    def cargarDatosComboBoxCrearPdAdmin(self):
+            # Obtener los datos de la base de datos
+            conexion_db = conexion.conectar()
+            locales = adminGeneral.consultarLocales(conexion_db)
+            conexion_db.close()
+      
+            # Limpiar el comboBox antes de agregar nuevos datos
+            self.nombreEstablecimientoCrearProductoAdmin.clear()
+            
+            if locales:
+                  # Recorrer los datos de los locales y agregarlos al comboBox
+                  for local in locales:
+                        self.nombreEstablecimientoCrearProductoAdmin.addItem(local[1])
+            else:
+                  self.labelInfoCrearProductoAdmin.setText("No hay Productos disponibles en la base de datos")
+    
     def pgEditarPdAdmin(self):
           self.stackedWidget.setCurrentWidget(self.pgEditarProductoAdmin)
+          self.cargarDatosComboBoxEditarPdAdmin()
+          self.labelInfoEditarProductoAdmin.setText("")
+
+
+    def cargarDatosComboBoxEditarPdAdmin(self):
+            # Obtener los datos de la base de datos
+            conexion_db = conexion.conectar()
+            locales = adminGeneral.consultarLocales(conexion_db)
+            conexion_db.close()
+      
+            # Limpiar el comboBox antes de agregar nuevos datos
+            self.nombreEstablecimientoCrearProductoAdmin_2.clear()
+            
+            if locales:
+                  # Recorrer los datos de los locales y agregarlos al comboBox
+                  for local in locales:
+                        self.nombreEstablecimientoCrearProductoAdmin_2.addItem(local[1])
+            else:
+                  self.labelInfoCrearProductoAdmin.setText("No hay Productos disponibles en la base de datos")
+
+    def buscarProductoPorNombre(self):
+            # Obtener el nombre del producto a buscar
+            nombre = self.labelBuscarProductoNombreAdmin.text()
+      
+            # Buscar el producto en la base de datos
+            conexion_db = conexion.conectar()
+            producto = adminGeneral.consultarProductoPorNombre(conexion_db, nombre)
+            conexion_db.close()
+      
+            # Si el producto existe, mostrar los datos en los lineEdit
+            if producto:
+                  self.nombreEditarProductoAdmin.setText(producto[0][0])
+                  self.precioEditarProductoAdmin.setText(str(producto[0][1]))
+                  self.nombreEstablecimientoCrearProductoAdmin_2.setCurrentText(producto[0][2])
+                  
+                  self.labelInfoEditarProductoAdmin.setText("") 
+            else:
+                  self.nombreEditarProductoAdmin.setText("")
+                  self.labelInfoEditarProductoAdmin.setText("No se encontro el producto")
+    
+    def editarProducto(self):
+            # obtener los datos de los lineEdit
+            nombreproducto = self.nombreEditarProductoAdmin.text()
+            precio = self.precioEditarProductoAdmin.text()
+            nombreEstablecimiento = self.nombreEstablecimientoCrearProductoAdmin_2.currentText()
+            
+             # Modificar producto 
+            conexion_db = conexion.conectar()
+            try:
+                  resultado, mensaje = adminGeneral.modificarProducto(conexion_db, precio, nombreEstablecimiento, nombreproducto)
+            except:
+                  resultado = False
+                  mensaje = "Ocurrió un error al modificar el producto"
+            conexion_db.close()
+      
+            #Limpiar los lineEdit
+            self.nombreEditarProductoAdmin.setText("")
+            self.precioEditarProductoAdmin.setText("")
+            
+      
+            try:
+                  if resultado:
+                        self.labelInfoEditarProductoAdmin.setText(mensaje)
+                  else:
+                        self.labelInfoEditarProductoAdmin.setText(mensaje)
+            except:
+                        self.labelInfoEditarProductoAdmin.setText("ocurrio un error al modificar producto")
+          
     def pgEliminarPdAdmin(self):
           self.stackedWidget.setCurrentWidget(self.pgEliminarProductoAdmin)
-     
-    
-      
-      
-   
+          self.cargarDatosTablaEliminarProductos()
+          self.labelInfoEliminarProductoAdmin.setText("")
 
-    def pgLgMesero(self):
+    def cargarDatosTablaEliminarProductos(self):
+            # Obtener los datos de la base de datos
+            conexion_db = conexion.conectar()
+            productos = adminGeneral.consultarProductos(conexion_db)
+            conexion_db.close()
+      
+            # Ocultar la cabecera vertical que muestra los números de fila
+            self.tableEliminarProductosAdmin.verticalHeader().setVisible(False)
+      
+            # Establecer los títulos de las columnas
+            self.tableEliminarProductosAdmin.setColumnCount(3)
+            self.tableEliminarProductosAdmin.setHorizontalHeaderLabels(["Nombre", "Precio", "Nombre Establecimiento"])
+                  
+            # Limpiar la tabla antes de agregar nuevos datos
+            self.tableEliminarProductosAdmin.setRowCount(0)
+            
+            if productos:
+                  # Recorrer los datos de los locales y agregarlos a la tabla
+                  for producto in productos:
+                        rowPosition = self.tableEliminarProductosAdmin.rowCount()
+                        self.tableEliminarProductosAdmin.insertRow(rowPosition)
+                   
+                        # Insertar los datos en las celdas
+                        self.tableEliminarProductosAdmin.setItem(rowPosition, 0, QTableWidgetItem(producto[0]))
+                        self.tableEliminarProductosAdmin.setItem(rowPosition, 1, QTableWidgetItem(str(producto[1])))
+                        self.tableEliminarProductosAdmin.setItem(rowPosition, 2, QTableWidgetItem(producto[2]))
+
+            else:
+                  self.labelInfoMostrarLocalesAdmin.setText("No hay locales disponibles en la base de datos")
+     
+      
+    def eliminarProductoPorNombre(self):
+            # obtener los datos de los lineEdit
+            nombre = self.nombreEliminarProductoAdmin.text()
+            
+            # Eliminar producto
+            conexion_db = conexion.conectar()
+            resultado, mensaje = adminGeneral.eliminarProductoPorNombre(conexion_db, nombre)
+            conexion_db.close()
+      
+            # Mostrar mensaje de éxito o error
+            if resultado:
+                  self.labelInfoEliminarProductoAdmin.setText(mensaje)
+                  self.cargarDatosTablaEliminarProductos()
+            else:
+                  self.labelInfoEliminarProductoAdmin.setText("Ocurrió un error al eliminar el producto")
+      
+            # Limpiar el lineEdit
+            self.nombreEliminarProductoAdmin.setText("")
+    
+    def pgReporteVentasAdmin(self):
+              self.stackedWidget.setCurrentWidget(self.pageReporteVentasAdmin)
+              self.labelInfoReporteVentasAdmin.setText("")
+              self.btnRegresar.show()
+              self.cargarDatosTablaReporteVentasAdmin()
+     
+    def cargarDatosTablaReporteVentasAdmin(self):
+            # Obtener los datos de la base de datos
+            conexion_db = conexion.conectar()
+            ventas = ReporteVentas.consultarReporteVentas(conexion_db)
+            conexion_db.close()
+      
+            # Ocultar la cabecera vertical que muestra los números de fila
+            self.tableReporteVentasAdmin.verticalHeader().setVisible(False)
+      
+            # Establecer los títulos de las columnas
+            self.tableReporteVentasAdmin.setColumnCount(6)
+            self.tableReporteVentasAdmin.setHorizontalHeaderLabels(["ID Reporte", "ID Pedido", "Fecha","Nombre Mesero", "Numero Mesa", "Total"])
+                  
+            # Limpiar la tabla antes de agregar nuevos datos
+            self.tableReporteVentasAdmin.setRowCount(0)
+            
+            if ventas:
+                  # Recorrer los datos de los locales y agregarlos a la tabla
+                  for venta in ventas:
+                        rowPosition = self.tableReporteVentasAdmin.rowCount()
+                        self.tableReporteVentasAdmin.insertRow(rowPosition)
+                   
+                        # Insertar los datos en las celdas
+                        self.tableReporteVentasAdmin.setItem(rowPosition, 0, QTableWidgetItem(str(venta[0])))
+                        self.tableReporteVentasAdmin.setItem(rowPosition, 1, QTableWidgetItem(str(venta[1])))
+                        self.tableReporteVentasAdmin.setItem(rowPosition, 2, QTableWidgetItem(str(venta[2])))
+                        self.tableReporteVentasAdmin.setItem(rowPosition, 3, QTableWidgetItem(venta[3]))
+                        self.tableReporteVentasAdmin.setItem(rowPosition, 4, QTableWidgetItem(str(venta[4])))
+                        self.tableReporteVentasAdmin.setItem(rowPosition, 5, QTableWidgetItem(str(venta[5])))
+                        
+
+            else:
+                  self.labelInfoReporteVentasAdmin.setText("No hay ventas disponibles en la base de datos")
+
+          
+      
+      
+
+    def pgLgMesero(self):     
          self.stackedWidget.setCurrentWidget(self.pgLoginMesero)
+         self.usuarioMesero.setText("")
+         self.contrasenaMesero.setText("")
          self.btnRegresar.show()
 
     def pgMesero(self):
-        self.stackedWidget.setCurrentWidget(self.pgPrincipalMesero)
+        self.stackedWidget.setCurrentWidget(self.pgMostrarPedidosMesero)
+        self.cargarDatosTablaPedidos()
         self.btnRegresar.show()
+
+    def pgMostrarPdMesero(self):
+            self.stackedWidget.setCurrentWidget(self.pgMostrarPedidosMesero)
+            self.cargarDatosTablaPedidos()
+
+    def cargarDatosTablaPedidos(self):
+            # Obtener los datos de la base de datos
+            conexion_db = conexion.conectar()
+            pedidos = Mesero.consultarPedidos(conexion_db)
+            conexion_db.close()
+      
+            # Ocultar la cabecera vertical que muestra los números de fila
+            self.tablePedidosMesero.verticalHeader().setVisible(False)
+      
+            # Establecer los títulos de las columnas
+            self.tablePedidosMesero.setColumnCount(5)
+            self.tablePedidosMesero.setHorizontalHeaderLabels(["ID", "Deseos del Cliente", "Fecha de Emisión", "Nombre del Mesero", "Mesa"])
+                  
+            # Limpiar la tabla antes de agregar nuevos datos
+            self.tablePedidosMesero.setRowCount(0)
+            
+            if pedidos:
+                  # Recorrer los datos de los locales y agregarlos a la tabla
+                  for pedido in pedidos:
+                        rowPosition = self.tablePedidosMesero.rowCount()
+                        self.tablePedidosMesero.insertRow(rowPosition)
+                   
+                        # Insertar los datos en las celdas
+                        self.tablePedidosMesero.setItem(rowPosition, 0, QTableWidgetItem(str(pedido[0])))
+                        self.tablePedidosMesero.setItem(rowPosition, 1, QTableWidgetItem(pedido[1]))
+                        self.tablePedidosMesero.setItem(rowPosition, 2, QTableWidgetItem(str(pedido[2])))
+                        self.tablePedidosMesero.setItem(rowPosition, 3, QTableWidgetItem(pedido[3]))
+                        self.tablePedidosMesero.setItem(rowPosition, 4, QTableWidgetItem(str(pedido[5])))
+
+            else:
+                  self.labelInfoMostrarPedidosMesero.setText("No hay pedidos disponibles en la base de datos")
+
+    def pgCrearPdMesero(self):
+            self.stackedWidget.setCurrentWidget(self.pgCrearPedidosMesero)
+            self.cargardatosComboBoxNombreMesero()
+            self.fechaEmisionCrearPedidoMesero.setDate(QtCore.QDate.currentDate())
+            self.cargardatoscomboBoxNombreEstablecimientoCrearPedidoMesero()
+            self.cargardatoscomboBoxProductosCrearPedidoMesero()
+            
+    def  agregarPedido(self):
+          deseosCliente = self.deseosClienteCrearPedidoMesero.text()
+          fechaEmision = self.fechaEmisionCrearPedidoMesero.date().toPyDate()
+          nombreMesero = self.comboBoxnombreMeseroCrearPedidoMesero.currentText()
+          mesa = self.mesaCrearPedidoMesero.text()
+
+          conexion_db = conexion.conectar()
+          try:
+                resultado, id_pedido = Mesero.crearPedido(conexion_db, deseosCliente, fechaEmision, nombreMesero, mesa)
+          except:
+                  resultado = False
+                  id_pedido = None
+          conexion_db.close()
+
+          #limpiar los lineEdit
+          self.deseosClienteCrearPedidoMesero.setText("")
+          self.fechaEmisionCrearPedidoMesero.setDate(QtCore.QDate.currentDate())
+          self.comboBoxnombreMeseroCrearPedidoMesero.setCurrentText("")
+          self.mesaCrearPedidoMesero.setText("")
+
+          try:
+                if resultado:
+                      self.labelInfoCrearPedidoMesero.setText("Pedido creado con éxito")
+                      self.idDePedidoMesero.setText(str(id_pedido))
+                else:
+                      self.labelInfoCrearPedidoMesero.setText("Ocurrió un error al crear el pedido")
+            
+          except:
+                  self.labelInfoCrearPedidoMesero.setText("Ocurrió un error al crear el pedido")
+                
+    def cargardatosComboBoxNombreMesero(self):
+                # Obtener los datos de la base de datos
+                  conexion_db = conexion.conectar()
+                  meseros = Mesero.consultarMeseros(conexion_db)
+                  conexion_db.close()
+            
+                  # Limpiar el comboBox antes de agregar nuevos datos
+                  self.comboBoxnombreMeseroCrearPedidoMesero.clear()
+                  
+                  if meseros:
+                        # Recorrer los datos de los locales y agregarlos al comboBox
+                        for mesero in meseros:
+                              self.comboBoxnombreMeseroCrearPedidoMesero.addItem(mesero[0])
+                  else:
+                        self.labelInfoCrearPedidoMesero.setText("No hay meseros disponibles en la base de datos")        
+    
+    def cargardatoscomboBoxNombreEstablecimientoCrearPedidoMesero(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    locales = adminGeneral.consultarLocales(conexion_db)
+                    conexion_db.close()
+                  
+                    # Limpiar el comboBox antes de agregar nuevos datos
+                    self.comboBoxNombreEstablecimientoCrearPedidoMesero.clear()
+                    
+                    if locales:
+                              # Recorrer los datos de los locales y agregarlos al comboBox
+                              for local in locales:
+                                self.comboBoxNombreEstablecimientoCrearPedidoMesero.addItem(local[1])
+                    else:
+                              self.labelInfoCrearPedidoMesero.setText("No hay locales disponibles en la base de datos")
+    
+    def cargardatoscomboBoxProductosCrearPedidoMesero(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    nombreEstablecimiento = self.comboBoxNombreEstablecimientoCrearPedidoMesero.currentText()
+                    productos = adminGeneral.consultarProductoPorNombreEstablecimiento(conexion_db, nombreEstablecimiento)
+                    conexion_db.close()
+                  
+                    # Limpiar el comboBox antes de agregar nuevos datos
+                    self.comboBoxProductosCrearPedidoMesero.clear()
+                    
+                    if productos:
+                              # Recorrer los datos de los locales y agregarlos al comboBox
+                              for producto in productos:
+                                self.comboBoxProductosCrearPedidoMesero.addItem(producto[0])
+                    else:
+                              pass
+
+    def agregarProductoAPedido(self):
+          id_pedido = self.idDePedidoMesero_2.text()
+          nombreProducto = self.comboBoxProductosCrearPedidoMesero.currentText()
+          cantidad = self.cantidadCrearPedidoMesero.text()
+
+          conexion_db = conexion.conectar()
+          try:
+                resultado, mensaje = Mesero.agregarProducto(conexion_db, nombreProducto, cantidad, id_pedido)
+          except:
+                  resultado = False
+                  mensaje = "Ocurrió un error al agregar el producto al pedido"
+          conexion_db.close()
+
+          #limpiar los lineEdit
+          self.cantidadCrearPedidoMesero.setText("")
+
+          try:
+                if resultado:
+                      self.labelInfoCrearPedidoMesero.setText(mensaje)
+                else:
+                      self.labelInfoCrearPedidoMesero.setText(mensaje)
+            
+          except:
+                  self.labelInfoCrearPedidoMesero.setText("Ocurrió un error al agregar el producto al pedido")     
+      
+    def pgEditarPdMesero(self):
+            self.stackedWidget.setCurrentWidget(self.pgEditarPedidosMesero)
+            self.cargarDatosComboBoxEditarNombreMesero()
+            self.labelInfoEditarPedidoMesero.setText("")
+            self.cargardatoscomboBoxNombreEstablecimientoEditarPedidoMesero()
+            self.idProductoEditarMesero.setText("")
+
+    def buscarPedido(self):
+              id = self.idDePedidoMesero_3.text()
+      
+              conexion_db = conexion.conectar()
+              pedido = Mesero.consultarPedido(conexion_db, id)
+              conexion_db.close()
+      
+              if pedido:
+                  self.deseosClienteEditarPedidoMesero.setText(str(pedido[1]))
+                  self.fechaEmisionEditarPedidoMesero.setDate(QtCore.QDate.fromString(str(pedido[2]), "yyyy-MM-dd"))
+                  self.comboBoxnombreMeseroEditarPedidoMesero.setCurrentText(pedido[3])
+                  self.mesaEditarPedidoMesero.setText(str(pedido[5]))
+                  self.labelInfoEditarPedidoMesero.setText("")
+              else:
+                  self.deseosClienteEditarPedidoMesero.setText("")
+                  self.fechaEmisionEditarPedidoMesero.setDate(QtCore.QDate.currentDate())
+                  self.comboBoxnombreMeseroEditarPedidoMesero.setCurrentText("")
+                  self.mesaEditarPedidoMesero.setText("")
+                  self.labelInfoEditarPedidoMesero.setText("No se encontro el pedido")
+
+    def cargarDatosComboBoxEditarNombreMesero(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    meseros = Mesero.consultarMeseros(conexion_db)
+                    conexion_db.close()
+                  
+                    # Limpiar el comboBox antes de agregar nuevos datos
+                    self.comboBoxnombreMeseroEditarPedidoMesero.clear()
+                    
+                    if meseros:
+                              # Recorrer los datos de los locales y agregarlos al comboBox
+                              for mesero in meseros:
+                                self.comboBoxnombreMeseroEditarPedidoMesero.addItem(mesero[0])
+                    else:
+                              self.labelInfoEditarPedidoMesero.setText("No hay meseros disponibles en la base de datos")
+
+    def editarPedido(self):
+              id = self.idDePedidoMesero_3.text()
+              deseosCliente = self.deseosClienteEditarPedidoMesero.text()
+              fechaEmision = self.fechaEmisionEditarPedidoMesero.date().toPyDate()
+              nombreMesero = self.comboBoxnombreMeseroEditarPedidoMesero.currentText()
+              mesa = self.mesaEditarPedidoMesero.text()
+      
+              conexion_db = conexion.conectar()
+              try:
+                  resultado, mensaje = Mesero.modificarPedido(conexion_db, id, deseosCliente, fechaEmision, nombreMesero, mesa)
+              except:
+                    resultado = False
+                    mensaje = "Ocurrió un error al modificar el pedido"
+              conexion_db.close()
+      
+              #limpiar los lineEdit
+              self.deseosClienteEditarPedidoMesero.setText("")
+              self.fechaEmisionEditarPedidoMesero.setDate(QtCore.QDate.currentDate())
+              self.comboBoxnombreMeseroEditarPedidoMesero.setCurrentText("")
+              self.mesaEditarPedidoMesero.setText("")
+      
+              try:
+                  if resultado:
+                          self.labelInfoEditarPedidoMesero.setText(mensaje)
+                  else:
+                          self.labelInfoEditarPedidoMesero.setText(mensaje)
+                  
+              except:
+                    self.labelInfoEditarPedidoMesero.setText("Ocurrió un error al modificar el pedido")
+
+    def cargardatoscomboBoxNombreEstablecimientoEditarPedidoMesero(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    locales = adminGeneral.consultarLocales(conexion_db)
+                    conexion_db.close()
+                  
+                    # Limpiar el comboBox antes de agregar nuevos datos
+                    self.comboBoxNombreEstablecimientoEditarPedidoMesero.clear()
+                    
+                    if locales:
+                              # Recorrer los datos de los locales y agregarlos al comboBox
+                              for local in locales:
+                                self.comboBoxNombreEstablecimientoEditarPedidoMesero.addItem(local[1])
+                    else:
+                              self.labelInfoEditarPedidoMesero.setText("No hay locales disponibles en la base de datos")
+    def cargardatoscomboBoxProductosEditarPedidoMesero(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    nombreEstablecimiento = self.comboBoxNombreEstablecimientoEditarPedidoMesero.currentText()
+                    productos = adminGeneral.consultarProductoPorNombreEstablecimiento(conexion_db, nombreEstablecimiento)
+                    conexion_db.close()
+                  
+                    # Limpiar el comboBox antes de agregar nuevos datos
+                    self.comboBoxProductosEditarPedidoMesero.clear()
+                    
+                    if productos:
+                              # Recorrer los datos de los locales y agregarlos al comboBox
+                              for producto in productos:
+                                self.comboBoxProductosEditarPedidoMesero.addItem(producto[0])
+                    else:
+                              pass
+
+    def cargardatostableProductos_pedidoEditarMesero(self):
+                  id = self.idDePedidoMesero_3.text()
+            
+                  conexion_db = conexion.conectar()
+                  productos = Mesero.consultarProducto_pedido(conexion_db, id)
+                  conexion_db.close()
+            
+                  # Ocultar la cabecera vertical que muestra los números de fila
+                  self.tableProductosPedidoEditarMesero.verticalHeader().setVisible(False)
+            
+                  # Establecer los títulos de las columnas
+                  self.tableProductosPedidoEditarMesero.setColumnCount(3)
+                  self.tableProductosPedidoEditarMesero.setHorizontalHeaderLabels(["ID Producto", "Nombre" , "Cantidad"])
+                        
+                  # Limpiar la tabla antes de agregar nuevos datos
+                  self.tableProductosPedidoEditarMesero.setRowCount(0)
+                  
+                  if productos:
+                        # Recorrer los datos de los locales y agregarlos a la tabla
+                        for producto in productos:
+                              rowPosition = self.tableProductosPedidoEditarMesero.rowCount()
+                              self.tableProductosPedidoEditarMesero.insertRow(rowPosition)
+                         
+                              # Insertar los datos en las celdas
+                              self.tableProductosPedidoEditarMesero.setItem(rowPosition, 0, QTableWidgetItem(str(producto[0])))
+                              self.tableProductosPedidoEditarMesero.setItem(rowPosition, 1, QTableWidgetItem(str(producto[1])))
+                              self.tableProductosPedidoEditarMesero.setItem(rowPosition, 2, QTableWidgetItem(str(producto[2])))
+                  else:
+                        self.labelInfoEditarPedidoMesero_2.setText("No hay productos disponibles en la base de datos")
+
+    def editarProductoPedido(self):
+                  id_producto = self.idProductoEditarMesero.text()
+                  nombreProducto = self.comboBoxProductosEditarPedidoMesero.currentText()
+                  cantidad = self.cantidadEditarPedidoMesero.text()
+            
+                  conexion_db = conexion.conectar()
+                  try:
+                        resultado, mensaje = Mesero.modificarProducto_pedido(conexion_db, id_producto, nombreProducto, cantidad)
+                  except:
+                        resultado = False
+                        mensaje = "Ocurrió un error al modificar el producto del pedido"
+                  conexion_db.close()
+            
+                  #limpiar los lineEdit
+                  self.cantidadEditarPedidoMesero.setText("")
+            
+                  try:
+                        if resultado:
+                              self.labelInfoEditarPedidoMesero_2.setText(mensaje)
+                        else:
+                              self.labelInfoEditarPedidoMesero_2.setText(mensaje)
+                        
+                  except:
+                        self.labelInfoEditarPedidoMesero_2.setText("Ocurrió un error al modificar el producto del pedido")
+    def pgEliminarPdMesero(self):
+            self.stackedWidget.setCurrentWidget(self.pgEliminarPedidosMesero)
+            self.cargardatostableEliminarPedidoMesero()
+
+    def eliminarPdMesero(self):
+            id = self.idDePedidoMesero_4.text()
+            
+            # Eliminar local
+            conexion_db = conexion.conectar()
+            resultado, mensaje = Mesero.eliminarPedido(conexion_db, id)
+            conexion_db.close()
+      
+            # Mostrar mensaje de éxito o error
+            if resultado:
+                  self.labelInfoEliminarPedidoMesero.setText(mensaje)
+                  self.cargardatostableEliminarPedidoMesero()
+            else:
+                  self.labelInfoEliminarPedidoMesero.setText("Ocurrió un error al eliminar el pedido")
+      
+            # Limpiar el lineEdit
+            self.idDePedidoMesero_4.setText("")
+
+    def cargardatostableEliminarPedidoMesero(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    pedidos = Mesero.consultarPedidos(conexion_db)
+                    conexion_db.close()
+              
+                    # Ocultar la cabecera vertical que muestra los números de fila
+                    self.tableEliminarPedidoMesero.verticalHeader().setVisible(False)
+              
+                    # Establecer los títulos de las columnas
+                    self.tableEliminarPedidoMesero.setColumnCount(5)
+                    self.tableEliminarPedidoMesero.setHorizontalHeaderLabels(["ID", "Deseos del Cliente", "Fecha de Emisión", "Nombre del Mesero", "Mesa"])
+                          
+                    # Limpiar la tabla antes de agregar nuevos datos
+                    self.tableEliminarPedidoMesero.setRowCount(0)
+                    
+                    if pedidos:
+                              # Recorrer los datos de los locales y agregarlos a la tabla
+                              for pedido in pedidos:
+                                    rowPosition = self.tableEliminarPedidoMesero.rowCount()
+                                    self.tableEliminarPedidoMesero.insertRow(rowPosition)
+                               
+                                    # Insertar los datos en las celdas
+                                    self.tableEliminarPedidoMesero.setItem(rowPosition, 0, QTableWidgetItem(str(pedido[0])))
+                                    self.tableEliminarPedidoMesero.setItem(rowPosition, 1, QTableWidgetItem(pedido[1]))
+                                    self.tableEliminarPedidoMesero.setItem(rowPosition, 2, QTableWidgetItem(str(pedido[2])))
+                                    self.tableEliminarPedidoMesero.setItem(rowPosition, 3, QTableWidgetItem(pedido[3]))
+                                    self.tableEliminarPedidoMesero.setItem(rowPosition, 4, QTableWidgetItem(str(pedido[5])))
+
+                    else:
+                              self.labelInfoEliminarPedidoMesero.setText("No hay pedidos disponibles en la base de datos")
+    
+    def pgMostrarPdListosMesero(self):
+            self.stackedWidget.setCurrentWidget(self.pgMostrarPedidosListosMesero)
+            self.cargardatosTablaPedidosListos()
+    
+    def cargardatosTablaPedidosListos(self):
+                  # Obtener los datos de la base de datos
+                    conexion_db = conexion.conectar()
+                    pedidos = Mesero.consultarPedidosListos(conexion_db)
+                    conexion_db.close()
+              
+                    # Ocultar la cabecera vertical que muestra los números de fila
+                    self.tablePedidosListosMesero.verticalHeader().setVisible(False)
+              
+                    # Establecer los títulos de las columnas
+                    self.tablePedidosListosMesero.setColumnCount(5)
+                    self.tablePedidosListosMesero.setHorizontalHeaderLabels(["ID", "Deseos del Cliente", "Fecha de Emisión", "Nombre del Mesero", "Mesa"])
+                          
+                    # Limpiar la tabla antes de agregar nuevos datos
+                    self.tablePedidosListosMesero.setRowCount(0)
+                    
+                    if pedidos:
+                              # Recorrer los datos de los locales y agregarlos a la tabla
+                              for pedido in pedidos:
+                                    rowPosition = self.tablePedidosListosMesero.rowCount()
+                                    self.tablePedidosListosMesero.insertRow(rowPosition)
+                               
+                                    # Insertar los datos en las celdas
+                                    self.tablePedidosListosMesero.setItem(rowPosition, 0, QTableWidgetItem(str(pedido[0])))
+                                    self.tablePedidosListosMesero.setItem(rowPosition, 1, QTableWidgetItem(pedido[1]))
+                                    self.tablePedidosListosMesero.setItem(rowPosition, 2, QTableWidgetItem(str(pedido[2])))
+                                    self.tablePedidosListosMesero.setItem(rowPosition, 3, QTableWidgetItem(pedido[3]))
+                                    self.tablePedidosListosMesero.setItem(rowPosition, 4, QTableWidgetItem(str(pedido[5])))
+
+                    else:
+                              self.labelInfoMostrarPedidosListosMesero.setText("No hay pedidos disponibles en la base de datos")
+          
+    def facturarPedido(self):
+                  id = self.idDePedidoMesero_5.text()
+                  valorTotal = self.valorTotalFacturarPedidoMesero.text()
+                  conexion_db = conexion.conectar()
+                  id_pedido, deseosCliente, fechaEmision, nombreMesero, estado, numeroMesa = Mesero.consultarPedido(conexion_db, id)
+                  resultado, mensaje = ReporteVentas.generarReporteVentas(conexion_db, id_pedido, fechaEmision, nombreMesero, numeroMesa, valorTotal)
+                  conexion_db.close()
+            
+                  # Mostrar mensaje de éxito o error
+                  if resultado:
+                        self.labelInfoMostrarPedidosListosMesero.setText(mensaje)
+                        Mesero.eliminarPedido(conexion.conectar(), id)
+                        self.cargardatosTablaPedidosListos()
+                        
+                  else:
+                        self.labelInfoMostrarPedidosListosMesero.setText("Ocurrió un error al facturar el pedido")
+            
+                  # Limpiar el lineEdit
+                  self.idDePedidoMesero_5.setText("")
+
 
     def pgLgCocinero(self):
          self.stackedWidget.setCurrentWidget(self.pgLoginCocinero)
          self.btnRegresar.show()
+      
+    def pgCocinero(self):
+         self.stackedWidget.setCurrentWidget(self.pageCocinero)
+         self.btnRegresar.show()
+         self.cargarDatostablaProductos_pedidoCocinero()
     
-        
+    def pgMostrarPedidosPendientesConinero(self):
+            self.stackedWidget.setCurrentWidget(self.pgMostrarPedidosPendientesCocinero)
+            self.cargarDatostablaProductos_pedidoCocinero()
 
+    def cargarDatostablaProductos_pedidoCocinero(self):
+                  conexion_db = conexion.conectar()
+                  productos = Mesero.consultarProductos_pedido(conexion_db)
+                  conexion_db.close()
+            
+                  # Ocultar la cabecera vertical que muestra los números de fila
+                  self.tableProductosPedidoCocinero.verticalHeader().setVisible(False)
+            
+                  # Establecer los títulos de las columnas
+                  self.tableProductosPedidoCocinero.setColumnCount(3)
+                  self.tableProductosPedidoCocinero.setHorizontalHeaderLabels(["ID Pedido", "Nombre" , "Cantidad"])
+                        
+                  # Limpiar la tabla antes de agregar nuevos datos
+                  self.tableProductosPedidoCocinero.setRowCount(0)
+                  
+                  if productos:
+                        # Recorrer los datos de los locales y agregarlos a la tabla
+                        for producto in productos:
+                              rowPosition = self.tableProductosPedidoCocinero.rowCount()
+                              self.tableProductosPedidoCocinero.insertRow(rowPosition)
+                         
+                              # Insertar los datos en las celdas
+                              self.tableProductosPedidoCocinero.setItem(rowPosition, 0, QTableWidgetItem(str(producto[3])))
+                              self.tableProductosPedidoCocinero.setItem(rowPosition, 1, QTableWidgetItem(str(producto[1])))
+                              self.tableProductosPedidoCocinero.setItem(rowPosition, 2, QTableWidgetItem(str(producto[2])))
+                  else:
+                        self.labelInfoMostrarPedidosPendientesCocinero.setText("No hay productos disponibles en la base de datos")
+    
+    def aceptarPedidoCocinero(self):
+                  id = self.idDePedidoCocinero.text()
+                  conexion_db = conexion.conectar()
+                  resultado, mensaje = cocinero.aceptarPedido(conexion_db, id)
+                  conexion_db.close()
+            
+                  # Mostrar mensaje de éxito o error
+                  if resultado:
+                        self.labelInfoMostrarPedidosPendientesCocinero.setText(mensaje)
+                        self.cargarDatostablaProductos_pedidoCocinero()
+                  else:
+                        self.labelInfoMostrarPedidosPendientesCocinero.setText("Ocurrió un error al aceptar el pedido")
+            
+                  # Limpiar el lineEdit
+                  self.idDePedidoCocinero.setText("")
+      
+    def rechazarPedidoCocinero(self):
+                  id = self.idDePedidoCocinero_2.text()
+                  conexion_db = conexion.conectar()
+                  resultado, mensaje = cocinero.rechazarPedido(conexion_db, id)
+                  conexion_db.close()
+            
+                  # Mostrar mensaje de éxito o error
+                  if resultado:
+                        self.labelInfoMostrarPedidosPendientesCocinero.setText(mensaje)
+                        self.cargarDatostablaProductos_pedidoCocinero()
+                  else:
+                        self.labelInfoMostrarPedidosPendientesCocinero.setText("Ocurrió un error al rechazar el pedido")
+            
+                  # Limpiar el lineEdit
+                  self.idDePedidoCocinero.setText("")
     # Métodos para logrearse
     def loginAdmin(self):
         # Agregamos los datos ingresados en los QlineEdit a id y contraseña
@@ -783,6 +1560,29 @@ class GUI(QMainWindow):
                    pass
         
 
+       
+    def loginCocinero(self):
+            # Agregamos los datos ingresados en los QlineEdit a id y contraseña
+            conexion_db = conexion.conectar()
+            id = self.usuarioCocinero.text()
+            password = self.contrasenaCocinero.text()
+            rol = adminGeneral.consultarRol(conexion_db, id)
+            usuario = adminGeneral.comprobarUsuario(conexion_db, id)
+
+            try:
+                  if usuario:
+                        if rol[0] == "cocinero":
+                              resultado, mensaje = login.iniciarSesion(conexion_db, id, password)
+                              if resultado:
+                                    self.pgCocinero()
+                              else:
+                                    self.labelInfoLgCocinero.setText(mensaje)
+                        else:
+                              self.labelInfoLgCocinero.setText("Login incorrecto")
+                  else:
+                        self.labelInfoLgCocinero.setText("Usuario no existe")
+            except:
+                   pass
 
              
             
@@ -790,13 +1590,6 @@ class GUI(QMainWindow):
     
             
 
-
-         
-
-
-        
-
-    
     # Control de barra de titulo
     def crontrolBtMinimizar(self):
        self.showMinimized()

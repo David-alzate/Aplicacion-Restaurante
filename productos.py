@@ -1,8 +1,10 @@
 #clase producto
+from local import *
 
-class producto:
-    def __init__(self,id_producto,precio,nombreProducto):
-        self.id_producto=id_producto
-        self.precio=precio
-        self.nombreProducto=nombreProducto
+class producto(local):
+    def __init__(self,nombreProducto,precio,nombreEstablecimiento):
+        super().__init__(nombreEstablecimiento)
+        self.nombreProducto = nombreProducto
+        self.precio = precio
+        self.nombreProducto = nombreProducto
 

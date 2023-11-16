@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1166</width>
-    <height>837</height>
+    <width>1229</width>
+    <height>824</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1470,7 +1470,7 @@ color: rgb(0, 0, 0);</string>
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_47">
+                    <widget class="QLabel" name="labelInfoLgCocinero">
                      <property name="minimumSize">
                       <size>
                        <width>100</width>
@@ -1481,7 +1481,10 @@ color: rgb(0, 0, 0);</string>
                       <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
                      </property>
                      <property name="text">
-                      <string>¿</string>
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1532,7 +1535,7 @@ color: rgb(0, 0, 0);</string>
                  </spacer>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_5">
+                 <widget class="QPushButton" name="btnIngresarCocinero">
                   <property name="minimumSize">
                    <size>
                     <width>255</width>
@@ -1913,7 +1916,7 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_10">
+                    <widget class="QPushButton" name="btnReporteVentasAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>374</width>
@@ -1962,76 +1965,7 @@ border-radius:10px;
                   </spacer>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_10">
-                   <item>
-                    <widget class="QPushButton" name="pushButton_11">
-                     <property name="minimumSize">
-                      <size>
-                       <width>374</width>
-                       <height>141</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>374</width>
-                       <height>141</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{
-background-color: #d8d8d9;
-font: 87 17pt &quot;Arial Black&quot;;
-color: rgb(0, 0, 0);
-border-radius:10px;
-
-}
-
-QPushButton:hover{
-background-color: #c8c8c9;
-color: rgb(0, 0, 0);
-border-radius:10px;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>ESTADO PEDIDO</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_12">
-                     <property name="minimumSize">
-                      <size>
-                       <width>374</width>
-                       <height>141</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>374</width>
-                       <height>141</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{
-background-color: #d8d8d9;
-font: 87 17pt &quot;Arial Black&quot;;
-color: rgb(0, 0, 0);
-border-radius:10px;
-
-}
-
-QPushButton:hover{
-background-color: #c8c8c9;
-color: rgb(0, 0, 0);
-border-radius:10px;
-}</string>
-                     </property>
-                     <property name="text">
-                      <string>AJUSTES</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
+                  <layout class="QHBoxLayout" name="horizontalLayout_10"/>
                  </item>
                  <item>
                   <spacer name="verticalSpacer_10">
@@ -5458,6 +5392,12 @@ color: rgb(0, 0, 0);</string>
                     <layout class="QHBoxLayout" name="horizontalLayout_58">
                      <item>
                       <layout class="QVBoxLayout" name="verticalLayout_39">
+                       <property name="spacing">
+                        <number>30</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>50</number>
+                       </property>
                        <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_41">
                          <item>
@@ -6308,6 +6248,22 @@ border-radius:10px;
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_73">
                    <item>
+                    <widget class="QLabel" name="labelInfoMostrarProductosAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>300</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
                     <spacer name="horizontalSpacer_38">
                      <property name="orientation">
                       <enum>Qt::Horizontal</enum>
@@ -6321,7 +6277,7 @@ border-radius:10px;
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_3">
+                    <widget class="QPushButton" name="btnActualizarTableProductosAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -6611,48 +6567,39 @@ font: 87 11pt &quot;Arial Black&quot;;
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_59">
-                 <property name="spacing">
-                  <number>6</number>
-                 </property>
+                <layout class="QVBoxLayout" name="verticalLayout_61">
                  <property name="leftMargin">
                   <number>50</number>
                  </property>
                  <property name="topMargin">
                   <number>60</number>
                  </property>
-                 <property name="rightMargin">
-                  <number>9</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>9</number>
-                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_97">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 18pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Producto</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_60">
                    <item>
-                    <layout class="QHBoxLayout" name="horizontalLayout_105">
+                    <layout class="QHBoxLayout" name="horizontalLayout_108">
                      <item>
-                      <layout class="QVBoxLayout" name="verticalLayout_61">
+                      <layout class="QVBoxLayout" name="verticalLayout_59">
                        <property name="spacing">
                         <number>30</number>
                        </property>
-                       <item>
-                        <widget class="QLabel" name="label_97">
-                         <property name="styleSheet">
-                          <string notr="true">font: 87 18pt &quot;Arial Black&quot;;</string>
-                         </property>
-                         <property name="text">
-                          <string>Crear Producto</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item>
                         <layout class="QHBoxLayout" name="horizontalLayout_106">
                          <item>
                           <widget class="QLabel" name="label_98">
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
+                             <width>220</width>
                              <height>30</height>
                             </size>
                            </property>
@@ -6691,7 +6638,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                           <widget class="QLabel" name="label_99">
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
+                             <width>220</width>
                              <height>30</height>
                             </size>
                            </property>
@@ -6722,16 +6669,37 @@ font: 87 11pt &quot;Arial Black&quot;;
                         </layout>
                        </item>
                        <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_108"/>
-                       </item>
-                       <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_109"/>
-                       </item>
-                       <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_111"/>
-                       </item>
-                       <item>
-                        <layout class="QHBoxLayout" name="horizontalLayout_113"/>
+                        <layout class="QHBoxLayout" name="horizontalLayout_105">
+                         <item>
+                          <widget class="QLabel" name="label_100">
+                           <property name="minimumSize">
+                            <size>
+                             <width>220</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>Nombre Establecimiento</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QComboBox" name="nombreEstablecimientoCrearProductoAdmin">
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
                        </item>
                       </layout>
                      </item>
@@ -7117,7 +7085,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_27">
+                    <widget class="QLineEdit" name="labelBuscarProductoNombreAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>500</width>
@@ -7130,7 +7098,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_21">
+                    <widget class="QPushButton" name="btnBuscarProductoAdmin">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -7170,29 +7138,20 @@ font: 87 11pt &quot;Arial Black&quot;;
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_50">
-                    <property name="spacing">
-                     <number>6</number>
-                    </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_46">
                     <property name="leftMargin">
                      <number>50</number>
                     </property>
-                    <property name="topMargin">
-                     <number>60</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>9</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>9</number>
-                    </property>
                     <item>
-                     <layout class="QVBoxLayout" name="verticalLayout_51">
+                     <layout class="QVBoxLayout" name="verticalLayout_45">
                       <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_83">
+                       <layout class="QHBoxLayout" name="horizontalLayout_109">
                         <item>
-                         <layout class="QVBoxLayout" name="verticalLayout_62">
+                         <layout class="QVBoxLayout" name="verticalLayout_44">
                           <property name="spacing">
+                           <number>30</number>
+                          </property>
+                          <property name="topMargin">
                            <number>30</number>
                           </property>
                           <item>
@@ -7220,7 +7179,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_28">
+                             <widget class="QLineEdit" name="nombreEditarProductoAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -7259,7 +7218,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLineEdit" name="lineEdit_48">
+                             <widget class="QLineEdit" name="precioEditarProductoAdmin">
                               <property name="minimumSize">
                                <size>
                                 <width>500</width>
@@ -7271,24 +7230,42 @@ font: 87 11pt &quot;Arial Black&quot;;
                            </layout>
                           </item>
                           <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_87"/>
-                          </item>
-                          <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_116"/>
-                          </item>
-                          <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_117"/>
-                          </item>
-                          <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_118"/>
-                          </item>
-                          <item>
-                           <layout class="QHBoxLayout" name="horizontalLayout_119"/>
+                           <layout class="QHBoxLayout" name="horizontalLayout_65">
+                            <item>
+                             <widget class="QLabel" name="label_101">
+                              <property name="minimumSize">
+                               <size>
+                                <width>220</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>100</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                              <property name="text">
+                               <string>Nombre Establecimiento</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QComboBox" name="nombreEstablecimientoCrearProductoAdmin_2">
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
                           </item>
                          </layout>
                         </item>
                         <item>
-                         <spacer name="horizontalSpacer_41">
+                         <spacer name="horizontalSpacer_39">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -7310,7 +7287,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                         <property name="sizeHint" stdset="0">
                          <size>
                           <width>20</width>
-                          <height>40</height>
+                          <height>352</height>
                          </size>
                         </property>
                        </spacer>
@@ -7320,7 +7297,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_120">
                       <item>
-                       <widget class="QLabel" name="label_112">
+                       <widget class="QLabel" name="labelInfoEditarProductoAdmin">
                         <property name="minimumSize">
                          <size>
                           <width>300</width>
@@ -7355,7 +7332,7 @@ font: 87 11pt &quot;Arial Black&quot;;
                        </spacer>
                       </item>
                       <item>
-                       <widget class="QPushButton" name="pushButton_22">
+                       <widget class="QPushButton" name="btnGuardarCambiosEditarProductoAdmin">
                         <property name="minimumSize">
                          <size>
                           <width>170</width>
@@ -7676,10 +7653,10 @@ border-radius:10px;
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_31"/>
+                    <widget class="QLineEdit" name="nombreEliminarProductoAdmin"/>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton_25">
+                    <widget class="QPushButton" name="btnEliminarProductoPorNombre">
                      <property name="minimumSize">
                       <size>
                        <width>150</width>
@@ -7703,58 +7680,7 @@ border-radius:10px;
                   </layout>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_96">
-                   <item>
-                    <widget class="QLabel" name="label_88">
-                     <property name="minimumSize">
-                      <size>
-                       <width>100</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>100</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
-                     </property>
-                     <property name="text">
-                      <string>ID</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="lineEdit_32"/>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="pushButton_26">
-                     <property name="minimumSize">
-                      <size>
-                       <width>150</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>150</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
-                     </property>
-                     <property name="text">
-                      <string>Eliminar</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <widget class="QTableWidget" name="tableWidget_2">
+                  <widget class="QTableWidget" name="tableEliminarProductosAdmin">
                    <column>
                     <property name="text">
                      <string>Productos</string>
@@ -7764,6 +7690,22 @@ border-radius:10px;
                  </item>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_97">
+                   <item>
+                    <widget class="QLabel" name="labelInfoEliminarProductoAdmin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>300</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
                    <item>
                     <spacer name="horizontalSpacer_45">
                      <property name="orientation">
@@ -7787,20 +7729,3334 @@ border-radius:10px;
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="pgPrincipalMesero">
-          <widget class="QLabel" name="label_40">
-           <property name="geometry">
-            <rect>
-             <x>440</x>
-             <y>40</y>
-             <width>191</width>
-             <height>51</height>
-            </rect>
+         <widget class="QWidget" name="pgMostrarPedidosMesero">
+          <layout class="QHBoxLayout" name="horizontalLayout_76">
+           <property name="spacing">
+            <number>0</number>
            </property>
-           <property name="text">
-            <string>Mesero</string>
+           <property name="leftMargin">
+            <number>10</number>
            </property>
-          </widget>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_12">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_67">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_13">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #35795c;
+border-radius:10px;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_47">
+                 <property name="spacing">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_40">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>MESERO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosPendientesMesero1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCrearPedidosMesero1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEditarPedidosMesero1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Editar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEliminarPedidosMesero1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Eliminar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosListosMesero1">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Listos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_55">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>306</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCerrarSesionAdmin1_13">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>CERRAR SESION</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>Imagenes/logo cerrar sesion.png</normaloff>Imagenes/logo cerrar sesion.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_41">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_50">
+                 <item>
+                  <widget class="QLabel" name="label_53">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tablePedidosMesero"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_75">
+                   <item>
+                    <widget class="QLabel" name="labelInfoMostrarPedidosMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>600</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_40">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnActualizarTablaPedidosPendientes">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pgCrearPedidosMesero">
+          <layout class="QHBoxLayout" name="horizontalLayout_79">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_42">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_77">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_47">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #35795c;
+border-radius:10px;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_51">
+                 <property name="spacing">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_55">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>MESERO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosPendientesMesero1_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCrearPedidosMesero1_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEditarPedidosMesero1_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Editar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEliminarPedidosMesero1_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Eliminar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosListosMesero1_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Listos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_57">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>306</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCerrarSesionAdmin1_14">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>CERRAR SESION</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>Imagenes/logo cerrar sesion.png</normaloff>Imagenes/logo cerrar sesion.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_48">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_70">
+                 <property name="leftMargin">
+                  <number>50</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_57">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 18pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_68">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_111">
+                     <item>
+                      <layout class="QVBoxLayout" name="verticalLayout_66">
+                       <property name="spacing">
+                        <number>10</number>
+                       </property>
+                       <item>
+                        <layout class="QVBoxLayout" name="verticalLayout_65">
+                         <property name="spacing">
+                          <number>10</number>
+                         </property>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_83">
+                           <item>
+                            <widget class="QLabel" name="label_63">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                             </property>
+                             <property name="text">
+                              <string>Deseos del cliente</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLineEdit" name="deseosClienteCrearPedidoMesero">
+                             <property name="minimumSize">
+                              <size>
+                               <width>430</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>430</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_117">
+                           <item>
+                            <widget class="QLabel" name="label_84">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                             </property>
+                             <property name="text">
+                              <string>Fecha Emision</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QDateEdit" name="fechaEmisionCrearPedidoMesero">
+                             <property name="styleSheet">
+                              <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_118">
+                           <item>
+                            <widget class="QLabel" name="label_90">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                             </property>
+                             <property name="text">
+                              <string>Nombre Mesero</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QComboBox" name="comboBoxnombreMeseroCrearPedidoMesero">
+                             <property name="styleSheet">
+                              <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_119">
+                           <item>
+                            <widget class="QLabel" name="label_92">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>30</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                             </property>
+                             <property name="text">
+                              <string>Mesa</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLineEdit" name="mesaCrearPedidoMesero">
+                             <property name="minimumSize">
+                              <size>
+                               <width>430</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>430</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                        </layout>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="btnGenerarPedidoMesero">
+                         <property name="minimumSize">
+                          <size>
+                           <width>200</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>200</width>
+                           <height>25</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string>Generar Pedido</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_86">
+                         <item>
+                          <widget class="QLabel" name="label_93">
+                           <property name="minimumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>El ID de pedio es :</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="idDePedidoMesero">
+                           <property name="minimumSize">
+                            <size>
+                             <width>430</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>430</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_50">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_64">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_78">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 18pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Agregar Productos a Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_69">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_113">
+                     <item>
+                      <layout class="QVBoxLayout" name="verticalLayout_67">
+                       <property name="spacing">
+                        <number>15</number>
+                       </property>
+                       <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_96">
+                         <item>
+                          <widget class="QLabel" name="label_94">
+                           <property name="minimumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>ID de pedido</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="idDePedidoMesero_2"/>
+                         </item>
+                        </layout>
+                       </item>
+                       <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_116">
+                         <item>
+                          <widget class="QLabel" name="label_91">
+                           <property name="minimumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>Nombre Establecimiento</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QComboBox" name="comboBoxNombreEstablecimientoCrearPedidoMesero">
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
+                       <item>
+                        <layout class="QHBoxLayout" name="horizontalLayout_112">
+                         <item>
+                          <widget class="QLabel" name="label_82">
+                           <property name="minimumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>300</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>Productos</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QComboBox" name="comboBoxProductosCrearPedidoMesero">
+                           <property name="minimumSize">
+                            <size>
+                             <width>200</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>200</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLabel" name="label_83">
+                           <property name="styleSheet">
+                            <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                           </property>
+                           <property name="text">
+                            <string>Cantidad</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLineEdit" name="cantidadCrearPedidoMesero">
+                           <property name="maximumSize">
+                            <size>
+                             <width>90</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btnAgregarProductosAPedidoMesero">
+                           <property name="minimumSize">
+                            <size>
+                             <width>40</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>40</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string>+</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_51">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <spacer name="verticalSpacer_65">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_78">
+                   <item>
+                    <widget class="QLabel" name="labelInfoCrearPedidoMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>700</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_41">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pgEditarPedidosMesero">
+          <layout class="QHBoxLayout" name="horizontalLayout_90">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_54">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_87">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_55">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #35795c;
+border-radius:10px;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_52">
+                 <property name="spacing">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_67">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>MESERO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosPendientesMesero1_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCrearPedidosMesero1_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEditarPedidosMesero1_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Editar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEliminarPedidosMesero1_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Eliminar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosListosMesero1_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Listos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_58">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>306</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCerrarSesionAdmin1_15">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>CERRAR SESION</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>Imagenes/logo cerrar sesion.png</normaloff>Imagenes/logo cerrar sesion.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_56">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_71">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame_66">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_74">
+                    <item>
+                     <widget class="QLabel" name="label_69">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 87 12pt &quot;Arial Black&quot;;</string>
+                      </property>
+                      <property name="text">
+                       <string>Editar Pedido</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_89">
+                      <item>
+                       <widget class="QLabel" name="label_103">
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>ID pedido</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="idDePedidoMesero_3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>500</width>
+                          <height>25</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnBuscarPedidoMesero">
+                        <property name="minimumSize">
+                         <size>
+                          <width>150</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>150</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                        </property>
+                        <property name="text">
+                         <string>Buscar</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_73">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_126">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_72">
+                          <property name="leftMargin">
+                           <number>40</number>
+                          </property>
+                          <item>
+                           <layout class="QHBoxLayout" name="horizontalLayout_88">
+                            <item>
+                             <widget class="QLabel" name="label_70">
+                              <property name="minimumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                              <property name="text">
+                               <string>Deseos del cliente</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QLineEdit" name="deseosClienteEditarPedidoMesero">
+                              <property name="minimumSize">
+                               <size>
+                                <width>430</width>
+                                <height>0</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>430</width>
+                                <height>16777215</height>
+                               </size>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
+                           <layout class="QHBoxLayout" name="horizontalLayout_122">
+                            <item>
+                             <widget class="QLabel" name="label_88">
+                              <property name="minimumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                              <property name="text">
+                               <string>Fecha Emision</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QDateEdit" name="fechaEmisionEditarPedidoMesero">
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
+                           <layout class="QHBoxLayout" name="horizontalLayout_123">
+                            <item>
+                             <widget class="QLabel" name="label_95">
+                              <property name="minimumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                              <property name="text">
+                               <string>Nombre Mesero</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QComboBox" name="comboBoxnombreMeseroEditarPedidoMesero">
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
+                           <layout class="QHBoxLayout" name="horizontalLayout_124">
+                            <item>
+                             <widget class="QLabel" name="label_102">
+                              <property name="minimumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>300</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                              </property>
+                              <property name="text">
+                               <string>Mesa</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QLineEdit" name="mesaEditarPedidoMesero">
+                              <property name="minimumSize">
+                               <size>
+                                <width>430</width>
+                                <height>0</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>430</width>
+                                <height>16777215</height>
+                               </size>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_52">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_125">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLabel" name="labelInfoEditarPedidoMesero">
+                        <property name="minimumSize">
+                         <size>
+                          <width>300</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>300</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_43">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnGuardarCambiosEditarPedidoMesero">
+                        <property name="minimumSize">
+                         <size>
+                          <width>170</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>170</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                        </property>
+                        <property name="text">
+                         <string>Guardar Cambios</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_67">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_76">
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_75">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_127">
+                        <item>
+                         <widget class="QLabel" name="label_104">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>ID producto</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLineEdit" name="idProductoEditarMesero">
+                          <property name="minimumSize">
+                           <size>
+                            <width>500</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_128">
+                        <item>
+                         <widget class="QLabel" name="label_105">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>Nombre Establecimiento</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="comboBoxNombreEstablecimientoEditarPedidoMesero">
+                          <property name="styleSheet">
+                           <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_132">
+                        <item>
+                         <widget class="QLabel" name="label_108">
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>200</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>Nombre producto</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QComboBox" name="comboBoxProductosEditarPedidoMesero">
+                          <property name="styleSheet">
+                           <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_129">
+                      <item>
+                       <widget class="QLabel" name="label_106">
+                        <property name="minimumSize">
+                         <size>
+                          <width>200</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 8pt &quot;Arial Black&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>cantidad</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="cantidadEditarPedidoMesero">
+                        <property name="minimumSize">
+                         <size>
+                          <width>500</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QTableWidget" name="tableProductosPedidoEditarMesero"/>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_131">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLabel" name="labelInfoEditarPedidoMesero_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>700</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>300</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <spacer name="horizontalSpacer_54">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                        <property name="sizeHint" stdset="0">
+                         <size>
+                          <width>40</width>
+                          <height>20</height>
+                         </size>
+                        </property>
+                       </spacer>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btnGuardarCambiosEditarPedidoMesero_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>170</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>170</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                        </property>
+                        <property name="text">
+                         <string>Modificar</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pgEliminarPedidosMesero">
+          <layout class="QHBoxLayout" name="horizontalLayout_99">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_57">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_91">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_58">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #35795c;
+border-radius:10px;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_53">
+                 <property name="spacing">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_71">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>MESERO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosPendientesMesero1_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCrearPedidosMesero1_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEditarPedidosMesero1_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Editar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEliminarPedidosMesero1_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Eliminar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosListosMesero1_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Listos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_60">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>306</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCerrarSesionAdmin1_16">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>CERRAR SESION</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>Imagenes/logo cerrar sesion.png</normaloff>Imagenes/logo cerrar sesion.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_59">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_54">
+                 <item>
+                  <widget class="QLabel" name="label_72">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Eliminar Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_100">
+                   <item>
+                    <widget class="QLabel" name="label_89">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>ID</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="idDePedidoMesero_4"/>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnEliminarPedidoMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Eliminar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableEliminarPedidoMesero"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_92">
+                   <item>
+                    <widget class="QLabel" name="labelInfoEliminarPedidoMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>700</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_44">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnActualizarTablaUsuariosAdmin_5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pgMostrarPedidosListosMesero">
+          <layout class="QHBoxLayout" name="horizontalLayout_102">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QFrame" name="frame_60">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_93">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_61">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #35795c;
+border-radius:10px;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_55">
+                 <property name="spacing">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_79">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>MESERO</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosPendientesMesero1_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCrearPedidosMesero1_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Crear Pedido</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEditarPedidosMesero1_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Editar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnEliminarPedidosMesero1_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Eliminar Pedido Pendiente</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosListosMesero1_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Listos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_61">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>306</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCerrarSesionAdmin1_17">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>CERRAR SESION</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>Imagenes/logo cerrar sesion.png</normaloff>Imagenes/logo cerrar sesion.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_62">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_62">
+                 <item>
+                  <widget class="QLabel" name="label_111">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Facturar</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_135">
+                   <item>
+                    <widget class="QLabel" name="label_112">
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>ID pedido</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="idDePedidoMesero_5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>500</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_136">
+                   <item>
+                    <widget class="QLabel" name="label_113">
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Valor Total</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="valorTotalFacturarPedidoMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>500</width>
+                       <height>25</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnFacturarPedidoMesero">
+                   <property name="minimumSize">
+                    <size>
+                     <width>150</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                   </property>
+                   <property name="text">
+                    <string>Facturar</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_80">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Listos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tablePedidosListosMesero"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_101">
+                   <item>
+                    <widget class="QLabel" name="labelInfoMostrarPedidosListosMesero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>600</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_48">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnActualizarPedidosListos">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageCocinero">
+          <layout class="QHBoxLayout" name="horizontalLayout_110">
+           <item>
+            <widget class="QFrame" name="frame_63">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_103">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QFrame" name="frame_64">
+                <property name="minimumSize">
+                 <size>
+                  <width>240</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: #35795c;
+border-radius:10px;</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_63">
+                 <property name="spacing">
+                  <number>30</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_47">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Cocinero</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnPedidosPendientesCocinero">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 10pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_62">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>306</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnCerrarSesionAdmin1_18">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color: #d8d8d9;
+font: 87 9pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);
+border-radius:10px;
+
+}
+
+QPushButton:hover{
+background-color: #c8c8c9;
+color: rgb(0, 0, 0);
+border-radius:10px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>CERRAR SESION</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>Imagenes/logo cerrar sesion.png</normaloff>Imagenes/logo cerrar sesion.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="frame_65">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_64">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_133">
+                   <item>
+                    <widget class="QLabel" name="label_109">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Aceptar Pedido ID:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="idDePedidoCocinero"/>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnAceptarPedidoCocinero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Aceptar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_134">
+                   <item>
+                    <widget class="QLabel" name="label_110">
+                     <property name="minimumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Rechazar Pedido ID:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="idDePedidoCocinero_2"/>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnRechazarPedidoCocinero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 11pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string>Rechazar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_81">
+                   <property name="styleSheet">
+                    <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+                   </property>
+                   <property name="text">
+                    <string>Pedidos Pendientes</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTableWidget" name="tableProductosPedidoCocinero"/>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_104">
+                   <item>
+                    <widget class="QLabel" name="labelInfoMostrarPedidosPendientesCocinero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>600</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>200</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 10pt &quot;Arial Black&quot;;</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_49">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnActualizarPedidosPendientesCocinero">
+                     <property name="minimumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>150</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+                     </property>
+                     <property name="text">
+                      <string>Actualizar</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="pageReporteVentasAdmin">
+          <layout class="QVBoxLayout" name="verticalLayout_77">
+           <property name="spacing">
+            <number>9</number>
+           </property>
+           <property name="leftMargin">
+            <number>9</number>
+           </property>
+           <property name="topMargin">
+            <number>9</number>
+           </property>
+           <property name="rightMargin">
+            <number>9</number>
+           </property>
+           <property name="bottomMargin">
+            <number>9</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_107">
+             <property name="styleSheet">
+              <string notr="true">font: 87 14pt &quot;Arial Black&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Reporte De Ventas</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableReporteVentasAdmin"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_138">
+             <item>
+              <widget class="QLabel" name="labelInfoReporteVentasAdmin">
+               <property name="minimumSize">
+                <size>
+                 <width>600</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_56">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnActualizarReporteVentasAdmin">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 87 13pt &quot;Arial Black&quot;;
+color: rgb(0, 0, 0);</string>
+               </property>
+               <property name="text">
+                <string>Actualizar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>
